@@ -5,27 +5,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 //import com.houseservice.model.Services;
-import com.houseservice.model.User;
-import com.houseservice.repository.UserRepository;
+import com.houseservice.model.Contact;
+import com.houseservice.repository.ContactRepository;
 
 /**
  * Class UserController
  */
 @Controller
 @RequestMapping("api/v1/")
-public class UserControllers {
+public class ContactControllers {
 
 
 /**
    * Create a new user with an auto-generated id and email and name as passed 
    * values.
    */
-  @RequestMapping(value="user/create")
+  @RequestMapping(value="message/create")
   @ResponseBody
-  public String create(String email, String name) {
+  public String create(String message) {
     try {
-      User user = new User(email, name);
-      userDao.saveAndFlush(user);
+      Contact msg = new Contact(message);
+      userDao.saveAndFlush(msg);
     }
     catch (Exception ex) {
       return "Error creating the user: " + ex.toString();
@@ -35,7 +35,7 @@ public class UserControllers {
   
   /**
    * Delete the user with the passed id.
-   */
+  
   @RequestMapping(value="user/delete")
   @ResponseBody
   public String delete(long id) {
@@ -48,13 +48,13 @@ public class UserControllers {
     }
     return "User succesfully deleted!";
   }
-  
+   */
   // ------------------------
   // PRIVATE FIELDS
   // ------------------------
   
   // Wire the UserDao used inside this controller.
   @Autowired
-  private UserRepository userDao;
+  private ContactRepository userDao;
   
 } // class UserController
