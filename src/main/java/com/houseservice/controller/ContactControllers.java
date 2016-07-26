@@ -22,9 +22,9 @@ public class ContactControllers {
    */
   @RequestMapping(value="message/create")
   @ResponseBody
-  public String create(String message) {
+  public String create(String email,String message) {
     try {
-      Contact msg = new Contact(message);
+      Contact msg = new Contact(email,message);
       userDao.saveAndFlush(msg);
     }
     catch (Exception ex) {
