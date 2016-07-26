@@ -1,6 +1,9 @@
 package com.houseservice.controller;
+<<<<<<< HEAD
 import java.util.List;
 
+=======
+>>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 //import com.houseservice.model.Services;
 import com.houseservice.model.User;
+<<<<<<< HEAD
 import com.houseservice.model.UserDao;
+=======
+import com.houseservice.repository.UserRepository;
+>>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
 
 /**
  * Class UserController
@@ -17,12 +24,15 @@ import com.houseservice.model.UserDao;
 @RequestMapping("api/v1/")
 public class UserControllers {
 
+<<<<<<< HEAD
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
 
  // private static final String User = null;
  // private static final List<User>  = null;
+=======
+>>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
 
 /**
    * Create a new user with an auto-generated id and email and name as passed 
@@ -33,7 +43,11 @@ public class UserControllers {
   public String create(String email, String name) {
     try {
       User user = new User(email, name);
+<<<<<<< HEAD
       userDao.create(user);
+=======
+      userDao.saveAndFlush(user);
+>>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
     }
     catch (Exception ex) {
       return "Error creating the user: " + ex.toString();
@@ -57,6 +71,7 @@ public class UserControllers {
     return "User succesfully deleted!";
   }
   
+<<<<<<< HEAD
   /**
    * Retrieve the id for the user with the passed email address.
    */
@@ -111,12 +126,18 @@ public class UserControllers {
    
   } 
 
+=======
+>>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
   // ------------------------
   // PRIVATE FIELDS
   // ------------------------
   
   // Wire the UserDao used inside this controller.
   @Autowired
+<<<<<<< HEAD
   private UserDao userDao;
+=======
+  private UserRepository userDao;
+>>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
   
 } // class UserController
