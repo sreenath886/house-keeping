@@ -18,19 +18,22 @@ public class ContactControllers {
 
 /**
    * Create a new user with an auto-generated id and email and name as passed 
+   * /api/v1/message/create?message=hiii
    * values.
    */
   @RequestMapping(value="message/create")
   @ResponseBody
   public String create(String message) {
-    try {
+    String status_text;
+	try {
       Contact msg = new Contact(message);
       userDao.saveAndFlush(msg);
+      status_text="Success";
     }
     catch (Exception ex) {
       return "Error creating the user: " + ex.toString();
     }
-    return "User succesfully created!";
+    return status_text;
   }
   
   /**

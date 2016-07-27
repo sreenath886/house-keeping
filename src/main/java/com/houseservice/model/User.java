@@ -6,12 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-<<<<<<< HEAD
-
-/**
- */
-=======
->>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
 @Entity
 @Table(name = "users")
 public class User {
@@ -68,9 +62,6 @@ public class User {
   public void setName(String value) {
     this.name = value;
   }
-  
-<<<<<<< HEAD
+
 } // class User
-=======
-}
->>>>>>> e5ec2927cec43235ea0cb7ffb9bd28a9a7b38fad
+
