@@ -40,13 +40,17 @@
 		        dataType : "json",
 		        type : "post",
 		        data : {
-		        	message : $('#sr_message').val()
+		        	hk_message : $('#hk_message').val(),
+		        	hk_email : $('#hk_email').val(),
+		        	hk_name : $('#hk_name').val()
 		        },
 		       url : 'http://localhost:8181/api/v1/message/create',
 
 		        success : function(response) {
+		        	alert(1);
 		        	var obj = response;
-		        	var status = obj[1].sr_DESCRIPTION;
+		        	alert(obj);
+		        	var status = obj[1].status;
 		        	alert(status);
      /* 
         "obj" is evaluated at this point if server responded 

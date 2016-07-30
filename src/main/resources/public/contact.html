@@ -4,15 +4,20 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head><link rel="import" id="template-file" href="header.html"></head>
-		
-	<div>
-	<script>
-		var getImport  = document.querySelector('#template-file');
-		var getContent = getImport.import.querySelector('#fh5co-header-section');
-	    document.body.appendChild(document.importNode(getContent, true));
-	</script>
-		</div>
+	
+<head><script src="js/jquery.min.js"></script>
+	
+<script> 
+$(document).ready(function() {
+	$('.header').load("header.html"); 
+	$('.footer').load("footer.html"); 
+
+});
+
+</script> 
+</head>
+<div class="header"></div>
+    
 		<!-- end:fh5co-header -->
 		<div class="fh5co-parallax" style="background-image: url(images/home-image-3.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
@@ -46,17 +51,17 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Name">
+										<input type="text" id="hk_name" class="form-control" placeholder="Name">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Email">
+										<input type="text" id="hk_email" class="form-control" placeholder="Email">
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
-										<textarea name="" class="form-control" id="sr_message" cols="30" rows="7" placeholder="Message"></textarea>
+										<textarea name="" class="form-control" id="hk_message" cols="30" rows="7" placeholder="Message"></textarea>
 									</div>
 								</div>
 								<div class="col-md-12">
@@ -70,19 +75,10 @@
 				</form>
 			</div>
 		</div>
-		<!-- END fh5co-contact -->
-		
-		<!-- END map -->
-			<head><link rel="import" id="footer-file" href="footer.html"></head>
-		
-	<div>
-	<script>
-		var getImport  = document.querySelector('#footer-file');
-		var getContent = getImport.import.querySelector('#hose-footer');
-	    document.body.appendChild(document.importNode(getContent, true));
-	</script>
 
-	</div>
+    
+    <div class="footer"></div>
+    
 	</body>
 </html>
 
