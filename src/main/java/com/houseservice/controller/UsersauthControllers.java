@@ -25,10 +25,10 @@ public class UsersauthControllers {
 	
   @RequestMapping(value="usersauth",method = RequestMethod.POST)
   @ResponseBody
- public List<Users> querybyemail2(String email){
+ public List<Users> querybyemail2(String email,String password){
 //  public String create(@PathVariable String email) {
     try {
-    	return userDao.querybyemail(email);
+    	return userDao.querybyemail(email,password);
     }
     catch (Exception ex) {
      // return "User not found: " + ex.toString();
