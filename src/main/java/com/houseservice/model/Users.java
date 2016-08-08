@@ -4,10 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "users")
+
 public class Users {
 
   // ------------------------
@@ -90,5 +92,10 @@ public Users(long id) {
 	this.id = id;
 }
 
+public Users(String email) {
+	super();
+	this.email = email;
+	
+}
 
 }
