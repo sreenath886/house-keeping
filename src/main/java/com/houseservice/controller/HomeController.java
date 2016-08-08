@@ -1,12 +1,27 @@
 package com.houseservice.controller;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.houseservice.model.Services;
+
 
 @RestController
 public class HomeController {
-@RequestMapping("/")
-public String home(){
-	return "House keeping, is real fun";
+@RequestMapping(value = "home", method = RequestMethod.GET)
+public String renderHelloWorldView(Model model){
+	
+	return "index";
+	//return "House keeping, is real fun";
+}
+@RequestMapping("services")
+public String about(Model model) {
+	// List<Services> services = (List<Services>) serviceRepository.findAll();
+	
+	model.addAttribute("Services", new Services());
+	
+	return "services";
 }
 }

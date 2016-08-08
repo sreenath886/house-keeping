@@ -12,7 +12,7 @@
 		            g_username : 'sree',
 		            g_pwd : 'sree'
 		        },
-		       url : 'http://localhost:8181/api/v1/services',
+		       url : '/api/v1/services',
 
 		        success : function(response) {
 		        	//alert('123');

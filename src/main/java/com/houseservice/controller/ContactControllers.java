@@ -28,13 +28,14 @@ public class ContactControllers {
       Contact msg = new Contact(hk_name,hk_email,hk_message);
       userDao.saveAndFlush(msg);
       status = "User succesfully created!";
+      return status ;
     }
     catch (Exception ex) {
       return "Error creating the user: " + ex.toString();
     }
     
    
-	return status ;
+	
   }
   
   /**
