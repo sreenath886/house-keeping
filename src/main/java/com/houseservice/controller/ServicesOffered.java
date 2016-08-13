@@ -26,12 +26,12 @@ public List<Services> list(){
 }
 
 
-@RequestMapping("aboutss")
-public String about(Model model) {
+@RequestMapping("index")
+public String index(Model model) {
 	// List<Services> services = (List<Services>) serviceRepository.findAll();
 	
 	model.addAttribute("Services", new Services());
 	
-	return "about";
+	return "index";
 }
 }

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.houseservice.model.Services;
+import com.houseservice.model.Student;
 
 
 @RestController
@@ -16,12 +17,14 @@ public String renderHelloWorldView(Model model){
 	return "index";
 	//return "House keeping, is real fun";
 }
-@RequestMapping("services")
-public String about(Model model) {
+//@RequestMapping("servicesSS")
+//public String servicess(Model model) {
 	// List<Services> services = (List<Services>) serviceRepository.findAll();
 	
-	model.addAttribute("Services", new Services());
+//model.addAttribute("Services", new Services());
 	
-	return "services";
-}
+//return "servicess";
+//}
+
+	
 }

@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 @Entity
@@ -20,16 +19,16 @@ public class Users {
   private long id;
   
   @NotNull
-  private String name;
+  private String hk_name;
   
   @NotNull
-  private String email;
+  private String hk_email;
 
   @NotNull
-  private String password;
+  private String hk_password;
   
   @NotNull
-  private String usertype;
+  private String hk_usertype;
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
@@ -42,36 +41,36 @@ public void setId(long id) {
 	this.id = id;
 }
 
-public String getName() {
-	return name;
+public String gethk_name() {
+	return hk_name;
 }
 
-public void setName(String name) {
-	this.name = name;
+public void sethk_name(String hk_name) {
+	this.hk_name = hk_name;
 }
 
-public String getEmail() {
-	return email;
+public String gethk_email() {
+	return hk_email;
 }
 
-public void setEmail(String email) {
-	this.email = email;
+public void sethk_email(String hk_email) {
+	this.hk_email = hk_email;
 }
 
-public String getPassword() {
-	return password;
+public String gethk_password() {
+	return hk_password;
 }
 
-public void setPassword(String password) {
-	this.password = password;
+public void sethk_password(String hk_password) {
+	this.hk_password = hk_password;
 }
 
-public String getUsertype() {
-	return usertype;
+public String gethk_usertype() {
+	return hk_usertype;
 }
 
-public void setUsertype(String usertype) {
-	this.usertype = usertype;
+public void sethk_usertype(String hk_usertype) {
+	this.hk_usertype = hk_usertype;
 }
 
 public Users() {
@@ -79,12 +78,12 @@ public Users() {
 	// TODO Auto-generated constructor stub
 }
 
-public Users(String name, String email, String password, String usertype) {
+public Users(String hk_name, String hk_email, String hk_password, String hk_usertype) {
 	super();
-	this.name = name;
-	this.email = email;
-	this.password = password;
-	this.usertype = usertype;
+	this.hk_name = hk_name;
+	this.hk_email = hk_email;
+	this.hk_password = hk_password;
+	this.hk_usertype = hk_usertype;
 }
 
 public Users(long id) {
@@ -92,9 +91,9 @@ public Users(long id) {
 	this.id = id;
 }
 
-public Users(String email) {
+public Users(String hk_email) {
 	super();
-	this.email = email;
+	this.hk_email = hk_email;
 	
 }
 
