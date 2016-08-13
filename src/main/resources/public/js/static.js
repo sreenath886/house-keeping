@@ -67,10 +67,6 @@ function hk_services_get()
         dataType: "json",
         async: false,
         type: "GET",
-        data: {
-            g_username: 'sree',
-            g_pwd: 'sree'
-        },
         url: '/api/v1/services',
         success: function(response) {
             //alert('123');
