@@ -63,13 +63,14 @@ function hk_login_post()
 //Services Get
 function hk_services_get()
 {
+	//alert(123);
     $.ajax({
         dataType: "json",
         async: false,
         type: "GET",
         url: '/api/v1/services',
         success: function(response) {
-            //alert('123');
+            //alert('1');
             //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
             //var jsonString = JSON.stringify(response);
             var obj = response;
