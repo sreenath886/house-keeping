@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.houseservice.model.Services;
-import com.houseservice.model.Student;
 
 
 @RestController
