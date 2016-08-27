@@ -1,0 +1,21 @@
+#date-pk {
+    text-align: center;
+    padding: 5px;
+    margin: 0%;
+    margin-bottom: 1%;
+    border: 1px solid #ccc;
+    width:100%;
+}
+.qty {
+    width: 64px;
+    height: 42px;
+    text-align: center;
+    color: #555;
+}
+input.qtyplus { width:34px; height:34px;color: #4cb648;}
+input.qtyminus { width:34px; height:34px;color: #4cb648;}
+.date-txt
+{
+	margin-left: -19%;
+	color: #555;
+}
