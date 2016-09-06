@@ -63,7 +63,7 @@ function hk_login_post()
 //Services Get
 function hk_services_get()
 {
-	//alert(123);
+	alert(123);
     $.ajax({
         dataType: "json",
         async: false,
