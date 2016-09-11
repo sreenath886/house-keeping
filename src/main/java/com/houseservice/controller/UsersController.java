@@ -56,6 +56,20 @@ public String create(String hk_name,String hk_email,String hk_password,String hk
   }
 
 
+//DELETE A USER
+
+@RequestMapping(value="user/delete",method = RequestMethod.POST)
+@ResponseBody
+public String delete(long id) {
+    try {
+        Users user = new Users(id);
+        usersRepository.delete(user);
+    }
+    catch (Exception ex) {
+      return "Error deleting the user: " + ex.toString();
+    }
+    return "User succesfully deleted!";
+  }
 
 
 
