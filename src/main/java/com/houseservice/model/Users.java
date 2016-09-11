@@ -112,4 +112,10 @@ public Users(String hk_email) {
 	
 }
 
+public Users(Long hk_phone) {
+	super();
+	this.hk_phone = hk_phone;
+	
+}
+
 }
