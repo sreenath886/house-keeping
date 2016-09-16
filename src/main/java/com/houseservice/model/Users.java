@@ -16,7 +16,7 @@ public class Users {
   // ------------------------
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  public long id;
   
   @NotNull
   private String hk_name;
@@ -45,9 +45,17 @@ public void setId(long id) {
 	this.id = id;
 }
 
+
 public String gethk_name() {
 	return hk_name;
 }
+
+@Override
+public String toString(){
+//	return hk_name;
+	return getClass().getSimpleName() + "[name=" + hk_name + "]";
+}
+
 
 public void sethk_name(String hk_name) {
 	this.hk_name = hk_name;

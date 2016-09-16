@@ -1,10 +1,11 @@
 package com.houseservice.controller;
 
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.houseservice.model.Users;
 import com.houseservice.repository.UsersRepository;
 
+
+// LIST ALL USERS
 @Controller
 @RestController
 @RequestMapping("api/v1/")
@@ -26,13 +29,15 @@ public List<Users> list1(){
 }
 
 
-
+// GET USER  AND ID
 @RequestMapping(value="specificuserid",method = RequestMethod.GET)
 @ResponseBody
-public List<Users> querybyemail2(Long hk_phone,String hk_email){
-//public String create(@PathVariable String email) {
+public Long querybyemail2(Long hk_phone,String hk_email){
   try {
-  	return usersRepository.querybyphone(hk_phone,hk_email);
+	  List<Long> response1 =  usersRepository.querybyphone(hk_phone,hk_email); 
+	  return response1.get(0);
+    //return response1;
+
   }
   catch (Exception ex) {
    // return "User not found: " + ex.toString();
@@ -40,6 +45,36 @@ public List<Users> querybyemail2(Long hk_phone,String hk_email){
   //return "User found!";
 	return null;
 }
+
+
+
+
+/*
+// GET USER NAME AND ID
+@RequestMapping(value="specificuserid",method = RequestMethod.GET)
+@ResponseBody
+public String querybyemail2(Long hk_phone,String hk_email){
+  try {
+	  String response1 =  usersRepository.querybyphone(hk_phone,hk_email);
+	  
+//    System.out.println("ID1 IS " + response1.);
+  //  System.out.println("ID2 IS " + response1.get(1));
+    return response1;
+
+  }
+  catch (Exception ex) {
+    return "User not found: " + ex.toString();
+  }
+  //return "User found!";
+
+}
+
+*/
+
+
+
+
+
 
 //ADD A NEW USER
 @RequestMapping(value="user/create",method = RequestMethod.POST)
