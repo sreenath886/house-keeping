@@ -106,8 +106,23 @@ public String delete(long id) {
     return "User succesfully deleted!";
   }
 
+//Add user address
+/*
+@RequestMapping(value="user/addressadd",method = RequestMethod.POST)
+@ResponseBody
+public String AddAddesss(Long hk_usr_id,String hk_Address,String hk_HouseType) {
+    try {
+      Users user = new Users(hk_usr_id,hk_Address,hk_HouseType);
+      usersRepository.saveAndFlush(user);
+    }
+    catch (Exception ex) {
+      return "Error creating the user: " + ex.toString();
+    }
+    return "User succesfully created!";
+  }
+*/
 
-
+//Add user address
 
 
 

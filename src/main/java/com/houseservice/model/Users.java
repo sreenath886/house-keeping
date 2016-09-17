@@ -95,10 +95,6 @@ public void sethk_phone(long hk_phone) {
 
 
 
-public Users() {
-	super();
-	// TODO Auto-generated constructor stub
-}
 
 public Users(String hk_name, String hk_email, String hk_password, String hk_usertype,long hk_phone) {
 	super();
