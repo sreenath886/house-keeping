@@ -1,6 +1,8 @@
 package com.houseservice.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -13,6 +15,9 @@ public class UsersLog {
   // PRIVATE FIELDS
   // ------------------------
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  public long id;
+	  
   @NotNull
   public long hk_usr_id;
   

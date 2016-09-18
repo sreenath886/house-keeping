@@ -25,18 +25,20 @@ DROP TABLE IF EXISTS `user_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_log` (
-  `hk_usr_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hk_usr_id` int(11) DEFAULT NULL,
   `hk_Frequency` int(11) DEFAULT NULL,
   `hk_Hours` int(11) DEFAULT NULL,
   `extraServices` int(11) DEFAULT NULL,
-  `couponCode` varchar(25) DEFAULT NULL,
-  `callId` varchar(25) DEFAULT NULL,
+  `couponCode` varchar(45) DEFAULT NULL,
+  `callId` varchar(45) DEFAULT NULL,
   `ratingUser` int(11) DEFAULT NULL,
   `ratingStaff` int(11) DEFAULT NULL,
   `comment` varchar(85) DEFAULT NULL,
   `timeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`hk_usr_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uc_PersonID` (`hk_usr_id`,`callId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -22,10 +22,10 @@ private UsersLogRepository usersLogRepository ;
 //Add user address
 @RequestMapping(value="user/log1",method = RequestMethod.POST)
 @ResponseBody
-public String AddAddesss(Long hk_usr_id,int hk_Frequency,int hk_Hours,String callId) {
+public String AddLog(Long hk_usr_id,int hk_Frequency,int hk_Hours,String callId) {
     try {
     	UsersLog user = new UsersLog(hk_usr_id,hk_Frequency,hk_Hours,callId);
-    	usersLogRepository.saveAndFlush(user);
+    	usersLogRepository.save(user);
     }
     catch (Exception ex) {
       return "Error adding Log: " + ex.toString();
