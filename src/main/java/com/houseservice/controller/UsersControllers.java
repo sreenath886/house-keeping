@@ -51,7 +51,7 @@ public class UsersControllers {
   // ------------------------
   
   // Wire the UserDao used inside this controller.
-  @Autowired
-  private UsersRepository userDao;
+  //@Autowired
+ // private UsersRepository userDao;
   
-} // class UserController
+//} // class UserController
