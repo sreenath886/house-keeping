@@ -16,7 +16,7 @@ public class Users {
   // ------------------------
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  public long id;
   
   @NotNull
   private String hk_name;
@@ -45,9 +45,17 @@ public void setId(long id) {
 	this.id = id;
 }
 
+
 public String gethk_name() {
 	return hk_name;
 }
+
+@Override
+public String toString(){
+//	return hk_name;
+	return getClass().getSimpleName() + "[name=" + hk_name + "]";
+}
+
 
 public void sethk_name(String hk_name) {
 	this.hk_name = hk_name;
@@ -87,10 +95,6 @@ public void sethk_phone(long hk_phone) {
 
 
 
-public Users() {
-	super();
-	// TODO Auto-generated constructor stub
-}
 
 public Users(String hk_name, String hk_email, String hk_password, String hk_usertype,long hk_phone) {
 	super();
@@ -109,6 +113,12 @@ public Users(long id) {
 public Users(String hk_email) {
 	super();
 	this.hk_email = hk_email;
+	
+}
+
+public Users(Long hk_phone) {
+	super();
+	this.hk_phone = hk_phone;
 	
 }
 
