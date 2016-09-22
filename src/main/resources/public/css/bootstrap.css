@@ -5470,6 +5470,8 @@ a.badge:hover, a.badge:focus {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
+	
+	
   .jumbotron {
     padding-top: 48px;
     padding-bottom: 48px;

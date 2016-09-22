@@ -63,7 +63,7 @@ function hk_login_post()
 //Services Get
 function hk_services_get()
 {
-	alert(123);
+	//alert(123);
     $.ajax({
         dataType: "json",
         async: false,
@@ -81,13 +81,42 @@ function hk_services_get()
              */
             for (var i = 0; i < obj.length; i++) {
                 $('<li>' + '<a>' + obj[i].sr_DESCRIPTION + '</a>' + '</li>').appendTo($grouplist);
-                //alert(obj[i].sr_DESCRIPTION);
+              //  alert(obj[i].sr_DESCRIPTION);
             }
 
         }
     });
 
 }
+//for locality
+//function hk_localities_get()
+function hk_localities_get()
+{
+    // // alert(123)
+    // // var id="null";
+    $.ajax({
+    	 dataType: "json",
+         async: false,
+         type: "GET",
+         url: '/api/v1/services',
+        success: function(response) {
+        	var obj = response;
+
+          
+                for (var i = 0; i < obj.length; i++) {
+                    //alert(response.data[i].user_email);
+                    $('#location').append(
+                            $('<option></option>').val(obj[i].srv_ID).html(obj[i].sr_DESCRIPTION));
+
+                }
+           
+            
+            
+            
+        }
+    });
+}
+
 //For contact us post
 function hk_contactus_post()
 {

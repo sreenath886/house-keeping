@@ -29,6 +29,10 @@ public class Users {
   
   @NotNull
   private String hk_usertype;
+
+  @NotNull
+  private long hk_phone;
+  
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
@@ -73,17 +77,28 @@ public void sethk_usertype(String hk_usertype) {
 	this.hk_usertype = hk_usertype;
 }
 
+public long gethk_phone() {
+	return hk_phone;
+}
+
+public void sethk_phone(long hk_phone) {
+	this.hk_phone = hk_phone;
+}
+
+
+
 public Users() {
 	super();
 	// TODO Auto-generated constructor stub
 }
 
-public Users(String hk_name, String hk_email, String hk_password, String hk_usertype) {
+public Users(String hk_name, String hk_email, String hk_password, String hk_usertype,long hk_phone) {
 	super();
 	this.hk_name = hk_name;
 	this.hk_email = hk_email;
 	this.hk_password = hk_password;
 	this.hk_usertype = hk_usertype;
+	this.hk_phone = hk_phone;
 }
 
 public Users(long id) {

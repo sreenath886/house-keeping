@@ -36,6 +36,32 @@
   -webkit-transition:opacity 1s;
 }
 
+@media screen and (max-width: 768px) {
+	
+	
+	
+	#login{
+  width:100px;
+  margin:0 auto;
+  margin-top:1px;
+  margin-bottom:2%;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+}
+#book_div
+{
+    margin-left: -423px;
+    margin-top: 83px;
+}
+	.container1 {
+ margin-left: -423px;
+    margin-top: 683px;
+}
+}
+
+
+
+
 #triangle{
   width:0;
   border-top:12x solid transparent;
@@ -105,3 +131,4 @@
 #book_button:hover{
   background:#2288bb;
 }
+

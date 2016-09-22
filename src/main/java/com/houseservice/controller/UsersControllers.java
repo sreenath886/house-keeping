@@ -10,6 +10,7 @@ import com.houseservice.repository.UsersRepository;
 
 /**
  * Class UserController
+ * http://localhost:8181/api/v1/users/create?hk_name=vijue&hk_email=viju@vijayd&hk_password=&hk_usertype=1&hk_phone=9972828822
  */
 @Controller
 @RequestMapping("api/v1/")
@@ -22,9 +23,10 @@ public class UsersControllers {
    */
   @RequestMapping(value="users/create")
   @ResponseBody
-  public String create(String name,String email,String password,String usertype) {
+  public String create(String hk_name,String hk_email,String hk_usertype,long hk_phone) {
     try {
-      Users user = new Users(name,email,password,usertype);
+    	String hk_password="1234";
+      Users user = new Users(hk_name,hk_email,hk_password,hk_usertype,hk_phone);
       userDao.saveAndFlush(user);
     }
     catch (Exception ex) {

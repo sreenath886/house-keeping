@@ -39,10 +39,11 @@ $(document).ready(function() {
 	$('.footer').load("footer.html"); 
 	hk_services_get();
         index_book_divs();
-        $('#book_div').hide();
- //$('#book_div').show();
-   $('#book_div0').show();
+      //  $('#book_div').hide();
+ $('#book_div').show();
+  // $('#book_div0').show();
    $('#datepicker').val('Select Your Date');
+   hk_localities_get();
 });
 
 </script> 
@@ -63,10 +64,11 @@ $(document).ready(function() {
   <div id="triangle"></div>
   <h1>Book Now</h1>
   <div id="signup_div">
-      <input type="text" class="signup-text" placeholder="Name" />
-      <input type="text" class="signup-text" placeholder="Phone Number" />
-    <input type="email"  class="signup-text" placeholder="Email" />
-    <input type="button" id="book_button"  onclick="hide_divs();" value="Book" />
+      <input type="text"  id="hk_name"  class="signup-text" placeholder="Name" />
+      <input type="text"  id="hk_phone"  class="signup-text" placeholder="Phone Number" />
+    <input type="email"  id="hk_email"   class="signup-text" placeholder="Email" />
+     <input type="button" id="book_button"   onclick="hk_signup_one_post();" value="Book" /> 
+   <!-- <input type="button" id="book_button"  onclick="hide_divs();" value="Book" /> -->
   </div>
             </div></div>
                                           
@@ -79,12 +81,12 @@ $(document).ready(function() {
   
       
   <div id="signup_div">
-    <select name="dropdown" class="signup-text" >
+    <select name="dropdown" id="location" class="signup-text" >
   <option value="Developer">Select your Location</option>
-  <option value="Developer2">Whitefield</option>
-  <option value="Developer3">Madiwala</option>
+  <option value="Developer2">Whitefield1</option>
+  <option value="Developer3">Madiwala1</option>
 		  </select>
-		  <input type="text" class="signup-text" placeholder="Address" />
+		  <input type="text" class="signup-text" id="address" placeholder="Address" />
        <select name="house_type" id="house_type" onChange="time_pick();" class="signup-text" >
   <option value="0">House Type</option>
   <option value="1">1 BHK</option>
@@ -99,13 +101,13 @@ $(document).ready(function() {
 </div>
       <div id=''> <input type="text" class="signup-text"  id="datepicker"></div>
       
-       <select name="dropdown2" class="signup-text" >
+       <select name="dropdown2" id="time_selector" class="signup-text" >
   <option value="0">Select your Time</option>
   <option value="1">9 AM</option>
   <option value="2">10 AM</option>
   <option value="3">11 AM</option>
 		  </select>
-        <input type="button" id="book_button"  value="Finish" />
+        <input type="button" id="book_button"  onclick="hk_signup_two_post();"  value="Finish" />
   </div>
             </div></div>                            
             </div>  
