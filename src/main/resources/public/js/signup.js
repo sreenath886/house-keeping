@@ -49,11 +49,12 @@ function hk_signup_one_post()
 	        	hk_name: $('#hk_name').val(),
 	        	hk_phone: $('#hk_phone').val(),
 	        	hk_email: $('#hk_email').val(),
+	        	hk_password:"1234",
 	        	hk_usertype:usertype
 	        },
 	        url: '/api/v1/users/create',
 	        success: function(response) {
-	            alert('123');
+	            alert('user inserted');
 	            //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
 	            //var jsonString = JSON.stringify(response);
 	          

@@ -50,7 +50,10 @@ function hk_login_post()
         },
         url: '/api/v1/usersauth',
         success: function(response) {
+        	var obj = response;
             alert('123');
+            //alert(obj[0]);
+            window.location='dashboard.html';
             //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
             //var jsonString = JSON.stringify(response);
           
@@ -98,7 +101,7 @@ function hk_localities_get()
     	 dataType: "json",
          async: false,
          type: "GET",
-         url: '/api/v1/services',
+         url: '/api/v1/localities',
         success: function(response) {
         	var obj = response;
 
@@ -106,7 +109,7 @@ function hk_localities_get()
                 for (var i = 0; i < obj.length; i++) {
                     //alert(response.data[i].user_email);
                     $('#location').append(
-                            $('<option></option>').val(obj[i].srv_ID).html(obj[i].sr_DESCRIPTION));
+                            $('<option></option>').val(obj[i].hk_ZONE).html(obj[i].hk_LOCALITY));
 
                 }
            
@@ -143,6 +146,36 @@ function hk_contactus_post()
              with "application/json" or similar.
              */
 
+
+        }
+    });
+
+}
+
+//Services Get
+function hk_location_get()
+{
+	//alert(123);
+    $.ajax({
+        dataType: "json",
+        async: false,
+        type: "GET",
+        url: '/api/v1/localities',
+        success: function(response) {
+            //alert('1');
+            //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
+            //var jsonString = JSON.stringify(response);
+            var obj = response;
+            alert(obj);
+            //var $grouplist = $('.fh5co-sub-menu');
+            /* 
+             "obj" is evaluated at this point if server responded 
+             with "application/json" or similar.
+             */
+            for (var i = 0; i < obj.length; i++) {
+               // $('<li>' + '<a>' + obj[i].sr_DESCRIPTION + '</a>' + '</li>').appendTo($grouplist);
+                alert(obj[i].hk_LOCALITY);
+            }
 
         }
     });

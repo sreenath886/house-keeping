@@ -75,7 +75,7 @@ public String querybyemail2(Long hk_phone,String hk_email){
 
 
 //ADD A NEW USER
-@RequestMapping(value="user/create",method = RequestMethod.POST)
+@RequestMapping(value="user/create")
 @ResponseBody
 public String create(String hk_name,String hk_email,String hk_password,String hk_usertype,long hk_phone) {
     try {
