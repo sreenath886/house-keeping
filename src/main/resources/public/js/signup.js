@@ -40,7 +40,7 @@ function hk_signup_one_post()
 	else if($('#hk_email').val()==""||$('#hk_email').val()==null)
 	{ var x=0;}
 	
-	alert(x);
+	//alert(x);
 	var usertype = "1";
 	 $.ajax({
 	        dataType: "json",
@@ -67,6 +67,8 @@ function hk_signup_one_post()
 }
 function hk_signup_two_post()
 {
+	window.location='order_revised.html';
+	
 	var x=1;
 	if( $('#location').val()==""||$('#location').val()=="Select your Location")
 		{
@@ -83,10 +85,10 @@ function hk_signup_two_post()
 	else if($('#time_selector').val()==""||$('#time_selector').val()=="Select your Time")
 	{ var x=0;}
 	
-	alert(x);
+	//alert(x);
 	
 	var usertype =$('#location').val();
-	alert(usertype);
+	//alert(usertype);
 	 $.ajax({
 	        dataType: "json",
 	        type: "POST",
