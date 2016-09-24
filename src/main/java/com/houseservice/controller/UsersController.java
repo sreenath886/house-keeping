@@ -75,11 +75,11 @@ public String querybyemail2(Long hk_phone,String hk_email){
 
 
 //ADD A NEW USER
-@RequestMapping(value="user/create")
+@RequestMapping(value="user/create",method = RequestMethod.POST)
 @ResponseBody
-public String create(String hk_name,String hk_email,String hk_password,String hk_usertype,long hk_phone) {
+public String create(String hk_name,long hk_phone,String hk_email,String hk_usertype) {
     try {
-      Users user = new Users(hk_name,hk_email,hk_password,hk_usertype,hk_phone);
+      Users user = new Users(hk_name,hk_phone,hk_email,hk_usertype);
       usersRepository.saveAndFlush(user);
     }
     catch (Exception ex) {

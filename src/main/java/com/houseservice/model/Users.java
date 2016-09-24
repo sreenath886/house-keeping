@@ -24,7 +24,7 @@ public class Users {
   @NotNull
   private String hk_email;
 
-  @NotNull
+
   private String hk_password;
   
   @NotNull
@@ -96,7 +96,7 @@ public void sethk_phone(long hk_phone) {
 
 
 
-public Users(String hk_name, String hk_email, String hk_password, String hk_usertype,long hk_phone) {
+public Users(String hk_name,long hk_phone,String hk_email, String hk_usertype) {
 	super();
 	this.hk_name = hk_name;
 	this.hk_email = hk_email;
