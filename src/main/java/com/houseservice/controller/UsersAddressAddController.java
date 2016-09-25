@@ -22,9 +22,10 @@ private UsersAddressRepository usersAddressRepository ;
 //Add user address
 @RequestMapping(value="user/addressadd",method = RequestMethod.POST)
 @ResponseBody
-public String AddAddesss(Long hk_usr_id,String hk_Address,String hk_HouseType) {
+public String AddAddesss(long hk_user_id, String hk_locality, String hk_address, long hk_housetype,
+		long hk_numberhours) {
     try {
-    	UsersAddress user = new UsersAddress(hk_usr_id,hk_Address,hk_HouseType);
+    	UsersAddress user = new UsersAddress(hk_user_id,hk_locality,hk_address,hk_housetype,hk_numberhours);
       usersAddressRepository.saveAndFlush(user);
     }
     catch (Exception ex) {

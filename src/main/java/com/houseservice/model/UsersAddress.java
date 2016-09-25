@@ -1,11 +1,12 @@
 package com.houseservice.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 @Entity
-@Table(name = "user_address")
+@Table(name = "useraddress")
 
 public class UsersAddress {
 
@@ -13,52 +14,94 @@ public class UsersAddress {
   // PRIVATE FIELDS
   // ------------------------
   @Id
-  public long hk_usr_id;
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  public long id;
+	
+  public long hk_user_id;
+ 
+  private String hk_locality;
   
-  @NotNull
-  private String hk_Address;
+  private String hk_address;
+
+  public long hk_housetype;
   
-  @NotNull
-  private String hk_HouseType;
+  public long hk_numberhours;
 
-public long getHk_usr_id() {
-	return hk_usr_id;
-}
-
-public void setHk_usr_id(long hk_usr_id) {
-	this.hk_usr_id = hk_usr_id;
-}
-
-public String getHk_Address() {
-	return hk_Address;
-}
-
-public void setHk_Address(String hk_Address) {
-	this.hk_Address = hk_Address;
-}
-
-public String getHk_HouseType() {
-	return hk_HouseType;
-}
-
-public void setHk_HouseType(String hk_HouseType) {
-	this.hk_HouseType = hk_HouseType;
-}
-
-public UsersAddress(long hk_usr_id, String hk_Address, String hk_HouseType) {
-	super();
-	this.hk_usr_id = hk_usr_id;
-	this.hk_Address = hk_Address;
-	this.hk_HouseType = hk_HouseType;
-}
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 public UsersAddress() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-  
-  // ------------------------
-  // PUBLIC METHODS
-  // ------------------------
 
+public UsersAddress(long hk_user_id, String hk_locality, String hk_address, long hk_housetype,
+		long hk_numberhours) {
+	super();
+	this.hk_user_id = hk_user_id;
+	this.hk_locality = hk_locality;
+	this.hk_address = hk_address;
+	this.hk_housetype = hk_housetype;
+	this.hk_numberhours = hk_numberhours;
+}
+
+public long getId() {
+	return id;
+}
+
+public void setId(long id) {
+	this.id = id;
+}
+
+public long getHk_user_id() {
+	return hk_user_id;
+}
+
+public void setHk_user_id(long hk_user_id) {
+	this.hk_user_id = hk_user_id;
+}
+
+public String getHk_locality() {
+	return hk_locality;
+}
+
+public void setHk_locality(String hk_locality) {
+	this.hk_locality = hk_locality;
+}
+
+public String getHk_address() {
+	return hk_address;
+}
+
+public void setHk_address(String hk_address) {
+	this.hk_address = hk_address;
+}
+
+public long getHk_housetype() {
+	return hk_housetype;
+}
+
+public void setHk_housetype(long hk_housetype) {
+	this.hk_housetype = hk_housetype;
+}
+
+public long getHk_numberhours() {
+	return hk_numberhours;
+}
+
+public void setHk_numberhours(long hk_numberhours) {
+	this.hk_numberhours = hk_numberhours;
+}
+  
+  
+  
+  
+  
 }

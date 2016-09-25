@@ -1,13 +1,17 @@
 package com.houseservice.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 @Entity
-@Table(name = "user_log")
+@Table(name = "userlog")
 
 public class UsersLog {
 
@@ -18,129 +22,118 @@ public class UsersLog {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
 	  
-  @NotNull
-  public long hk_usr_id;
+  public int hk_user_id;
   
-  @NotNull
-  private int hk_Frequency;
+  private String  hk_startdate;
   
-  @NotNull
-  private int  hk_Hours;
+  private String hk_firstcalltime;
 
-  private int  extraServices;
+  private String  hk_callId;
   
-  private String  couponCode;
+  private int  hk_addonservices;
 
-  @NotNull
-  private String  callId;
+  private int  hk_userrating;
   
-  private int  ratingUser;
+  private int  hk_emprating;
   
-  private int  ratingStaff;
-
-  private String comment;
-
+  private String  hk_comment;
+  
+  
   
   
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
 
+
   
-  
-public long getHk_usr_id() {
-	return hk_usr_id;
+
+
+public long getId() {
+	return id;
 }
 
-public void setHk_usr_id(long hk_usr_id) {
-	this.hk_usr_id = hk_usr_id;
+public void setId(long id) {
+	this.id = id;
 }
 
-public int getHk_Frequency() {
-	return hk_Frequency;
+public int getHk_user_id() {
+	return hk_user_id;
 }
 
-public void setHk_Frequency(int hk_Frequency) {
-	this.hk_Frequency = hk_Frequency;
+public void setHk_user_id(int hk_user_id) {
+	this.hk_user_id = hk_user_id;
 }
 
-public int getHk_Hours() {
-	return hk_Hours;
+public String getHk_startdate() {
+	return hk_startdate;
 }
 
-public void setHk_Hours(int hk_Hours) {
-	this.hk_Hours = hk_Hours;
+public void setHk_startdate(String hk_startdate) {
+	this.hk_startdate =  hk_startdate;
 }
 
-public int getExtraServices() {
-	return extraServices;
+public String getHk_firstcalltime() {
+	return hk_firstcalltime;
 }
 
-public void setExtraServices(int extraServices) {
-	this.extraServices = extraServices;
+public void setHk_firstcalltime(String hk_firstcalltime) {
+	this.hk_firstcalltime = hk_firstcalltime;
 }
 
-public String getCouponCode() {
-	return couponCode;
+public String getHk_callId() {
+	return hk_callId;
 }
 
-public void setCouponCode(String couponCode) {
-	this.couponCode = couponCode;
+public void setHk_callId(String hk_callId) {
+	this.hk_callId = hk_callId;
 }
 
-public String getCallId() {
-	return callId;
+public int getHk_addonservices() {
+	return hk_addonservices;
 }
 
-public void setCallId(String callId) {
-	this.callId = callId;
+public void setHk_addonservices(int hk_addonservices) {
+	this.hk_addonservices = hk_addonservices;
 }
 
-public int getRatingUser() {
-	return ratingUser;
+public int getHk_userrating() {
+	return hk_userrating;
 }
 
-public void setRatingUser(int ratingUser) {
-	this.ratingUser = ratingUser;
+public void setHk_userrating(int hk_userrating) {
+	this.hk_userrating = hk_userrating;
 }
 
-public int getRatingStaff() {
-	return ratingStaff;
+public int getHk_emprating() {
+	return hk_emprating;
 }
 
-public void setRatingStaff(int ratingStaff) {
-	this.ratingStaff = ratingStaff;
+public void setHk_emprating(int hk_emprating) {
+	this.hk_emprating = hk_emprating;
 }
 
-public String getComment() {
-	return comment;
+public String getHk_comment() {
+	return hk_comment;
 }
 
-public void setComment(String comment) {
-	this.comment = comment;
+public void setHk_comment(String hk_comment) {
+	this.hk_comment = hk_comment;
 }
 
-public UsersLog(long hk_usr_id, int hk_Frequency, int hk_Hours, String callId) {
+public UsersLog(int hk_user_id, String hk_startdate, String hk_firstcalltime, String hk_callId) {
 	super();
-	this.hk_usr_id = hk_usr_id;
-	this.hk_Frequency = hk_Frequency;
-	this.hk_Hours = hk_Hours;
-	this.extraServices = extraServices;
-	this.couponCode = couponCode;
-	this.callId = callId;
-	this.ratingUser = ratingUser;
-	this.ratingStaff = ratingStaff;
-	this.comment = comment;
+	this.hk_user_id = hk_user_id;
+	this.hk_startdate = hk_startdate;
+	this.hk_firstcalltime = hk_firstcalltime;
+	this.hk_callId = hk_callId;
 }
 
 public UsersLog() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-
-
   
 
- 
   
 }
