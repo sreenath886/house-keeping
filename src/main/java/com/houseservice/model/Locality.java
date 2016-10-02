@@ -10,12 +10,20 @@ import javax.persistence.Table;
 @Table(name = "locality")
 public class Locality {
 	  @Id
-	  @GeneratedValue(strategy = GenerationType.AUTO)
+	 // @GeneratedValue(strategy = GenerationType.AUTO)
 	  private long hk_LOCALITY_ID;
 	  private String hk_ZONE;
 	  private String hk_LOCALITY;
 	  private int hk_DIST_CENTER;
 	  
+	  
+	
+	public long getHk_LOCALITY_ID() {
+		return hk_LOCALITY_ID;
+	}
+	public void setHk_LOCALITY_ID(long hk_LOCALITY_ID) {
+		this.hk_LOCALITY_ID = hk_LOCALITY_ID;
+	}
 	public String getHk_ZONE() {
 		return hk_ZONE;
 	}
