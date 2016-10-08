@@ -177,9 +177,10 @@ CREATE TABLE `userlog` (
   `hk_userrating` int(11) DEFAULT NULL,
   `hk_emprating` int(11) DEFAULT NULL,
   `hk_comment` varchar(85) DEFAULT NULL,
+  `hk_frequency` int(11) DEFAULT NULL,
   `timeStamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

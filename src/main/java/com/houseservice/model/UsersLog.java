@@ -38,6 +38,8 @@ public class UsersLog {
   
   private String  hk_comment;
   
+  private int hk_frequency;
+  
   
   
   
@@ -119,6 +121,17 @@ public String getHk_comment() {
 
 public void setHk_comment(String hk_comment) {
 	this.hk_comment = hk_comment;
+}
+
+
+
+
+public int getHk_frequency() {
+	return hk_frequency;
+}
+
+public void setHk_frequency(int hk_frequency) {
+	this.hk_frequency = hk_frequency;
 }
 
 public UsersLog(int hk_user_id, String hk_startdate, String hk_firstcalltime, String hk_callId) {
