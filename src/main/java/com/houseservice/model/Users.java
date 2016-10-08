@@ -96,6 +96,11 @@ public void sethk_phone(long hk_phone) {
 
 
 
+public Users() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
 public Users(String hk_name,long hk_phone,String hk_email, String hk_usertype) {
 	super();
 	this.hk_name = hk_name;

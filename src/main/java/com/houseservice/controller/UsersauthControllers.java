@@ -31,6 +31,9 @@ public class UsersauthControllers {
     	String[] parts = retval.split(",");
     	session.setAttribute("Userid",parts[0]);
     	session.setAttribute("UserName",parts[1]);
+        String username = (String) session.getAttribute("UserName");
+        System.out.println(username);
+
     	return "id:"+parts[0]+","+"name:"+parts[1];
     }
     catch (Exception ex) {
