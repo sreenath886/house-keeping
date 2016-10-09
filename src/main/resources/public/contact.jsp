@@ -8,8 +8,8 @@
  <script src="js/static.js"></script>
 <script> 
 $(document).ready(function() {
-	$('.header').load("header.html"); 
-	$('.footer').load("footer.html"); 
+	$('.header').load("header.jsp"); 
+	$('.footer').load("footer.jsp"); 
 	hk_services_get();
 	service_book_divs();
 });

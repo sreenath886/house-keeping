@@ -66,7 +66,7 @@ function hk_signup_one_post()
 }
 function hk_signup_two_post()
 {
-	window.location='order_revised.html';
+	window.location='order_revised.jsp';
 	
 	var x=1;
 	if( $('#location').val()==""||$('#location').val()=="Select your Location")

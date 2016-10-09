@@ -33,8 +33,8 @@
 <script> 
 
 $(document).ready(function() {
-	//$('.header').load("header.html"); 
-	//$('.footer').load("footer.html"); 
+	//$('.header').load("header.jsp"); 
+	//$('.footer').load("footer.jsp"); 
 	hk_services_get();
         index_book_divs();
       //  $('#book_div').hide();
@@ -148,19 +148,19 @@ $(document).ready(function() {
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<div style="margin-left: -50px;"><h1 id="fh5co-logo"><a href="index.html">House<span>Keeping</span></a></h1></div>
+						<div style="margin-left: -50px;"><h1 id="fh5co-logo"><a href="index.jsp">House<span>Keeping</span></a></h1></div>
 						<!-- START #fh5co-menu-wrap -->
 						
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
 								<li class="active">
-									<a href="index.html">Home</a>
+									<a href="index.jsp">Home</a>
 								</li>
 								<li>
-									<a href="services.html" class="fh5co-sub-ddown">Services</a>
+									<a href="services.jsp" class="fh5co-sub-ddown">Services</a>
 									 <ul class="fh5co-sub-menu">
-									 	<!--<li><a href="left-sidebar.html">Web Development</a></li>
-									 	<li><a href="right-sidebar.html">Branding &amp; Identity</a></li>
+									 	<!--<li><a href="left-sidebar.jsp">Web Development</a></li>
+									 	<li><a href="right-sidebar.jsp">Branding &amp; Identity</a></li>
 										 <li>
 											<a href="#" class="fh5co-sub-ddown">Free HTML5</a>
 											<ul class="fh5co-sub-menu">
@@ -178,14 +178,14 @@ $(document).ready(function() {
 									</ul>
 								</li>
 								<li>
-									<a href="about.html">How Its Work</a>
+									<a href="about.jsp">How Its Work</a>
 								</li>
-								<li><a href="book.html">Shedule</a></li>
-								<li><a href="people.html">House Keepers</a></li>
-								<li><a href="ourplans.html">Our plans</a></li>
-								<li><a href="review.html">Review</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="login.html" class="active">Login</a></li>
+								<li><a href="book.jsp">Shedule</a></li>
+								<li><a href="people.jsp">House Keepers</a></li>
+								<li><a href="ourplans.jsp">Our plans</a></li>
+								<li><a href="review.jsp">Review</a></li>
+								<li><a href="contact.jsp">Contact</a></li>
+								<li><a href="login.jsp" class="active">Login</a></li>
 								
 							</ul>
 						</nav>
@@ -199,65 +199,16 @@ $(document).ready(function() {
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/home-image.jpg);">
 				<div class="desc animate-box">
-				   <div class="container">
-                                <div id="book_div">
-       <div id="login">
-  <div id="triangle"></div>
-  <h1>Book Now</h1>
-  <div id="signup_div">
-      <input type="text"  id="hk_name"  class="signup-text" placeholder="Name" />
-      <input type="text"  id="hk_phone"  class="signup-text" placeholder="Phone Number" />
-    <input type="email"  id="hk_email"   class="signup-text" placeholder="Email" />
-     <input type="button" id="book_button"   onclick="hk_signup_one_post();" value="Book" /> 
-   <!-- <input type="button" id="book_button"  onclick="hide_divs();" value="Book" /> -->
-  </div>
-            </div></div>
-            </div>  
-              <div class="container">                           
-              <div id="book_div0" class="">
-       <div id="login">
-  <div id="triangle"></div>
-  <h1>Schedule Your Time</h1>
-  
-      
-  <div id="signup_div">
-    <select name="dropdown" id="location" class="signup-text" >
-  <option value="Developer">Select your Location</option>
-  
-		  </select>
-		  <input type="text" class="signup-text" id="address" placeholder="Address" />
-       <select name="house_type" id="house_type" onChange="time_pick();" class="signup-text" >
-  <option value="0">House Type</option>
-  <option value="1">1 BHK</option>
-  <option value="2">2 BHK</option>
-  <option value="3">3 BHK</option>
-  <option value="4">Duplex Home</option>
-		  </select>
-		<div id='date-pk' ><div class="date-txt">Recomanded Hr's
-    <input type='button' value='-' class='qtyminus' field='quantity' />
-    <input type='text' id="time-pick" name='quantity' value='0 hr' class='qty' />
-    <input type='button' value='+' class='qtyplus' field='quantity' /></div>
-</div>
-      <div id=''> <input type="text" class="signup-text"  id="datepicker"></div>
-      
-       <select name="dropdown2" id="time_selector" class="signup-text" >
-  <option value="0">Select your Time</option>
-  <option value="1">9 AM</option>
-  <option value="2">10 AM</option>
-  <option value="3">11 AM</option>
-		  </select>
-        <input type="button" id="book_button"  onclick="hk_signup_two_post();"  value="Finish" />
-  </div>
-            </div></div>                            
-            </div>   
+				   
+              
             
             
 					<div class="container">
 						<div class="row">
-							<div class="col-md-7">
+							<div class="col-md-6">
 								<h2>HOUSEKEEP <br>is a <b> Promise</b></h2>
 								<p><span>Book with <i class="icon-heart3"></i> <a href="" class="fh5co-site-name">OUR PERFECT CLEANERS</a></span></p>
-								<span><a class="btn btn-primary" href="#">Start Your Journey</a></span>
+								<span><a class="btn btn-primary" href="book.jsp">Start Your Journey</a></span>
 							</div>
 						</div>
 					</div>

@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,13 +11,14 @@
 	 <script src="js/static.js"></script>
 <script> 
 $(document).ready(function() {
-	$('.header').load("header.html"); 
-	$('.footer').load("footer.html"); 
+	$('.header').load("header.jsp"); 
+	$('.footer').load("footer.jsp"); 
 	hk_services_get();
 });
 
 </script> 
 </head>
+
 <div class="header"></div>
     
 		<!-- end:fh5co-header -->

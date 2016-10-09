@@ -109,7 +109,7 @@ function hk_localities_get()
                 for (var i = 0; i < obj.length; i++) {
                     //alert(response.data[i].user_email);
                     $('#location').append(
-                            $('<option></option>').val(obj[i].hk_ZONE).html(obj[i].hk_LOCALITY));
+                            $('<option></option>').val(obj[i].hk_LOCALITY_ID).html(obj[i].hk_LOCALITY));
 
                 }
            

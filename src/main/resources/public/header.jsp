@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="css/superfish.css">
 
 	<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/signup-style.css" media="screen" type="text/css" />
+ <link rel="stylesheet" href="css/signup-style.css" media="screen" type="text/css" /> 
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
