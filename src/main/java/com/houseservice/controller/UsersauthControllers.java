@@ -1,4 +1,6 @@
 package com.houseservice.controller;
+import java.util.Collections;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,12 +35,14 @@ public class UsersauthControllers {
     	session.setAttribute("UserName",parts[1]);
         String username = (String) session.getAttribute("UserName");
         System.out.println(username);
-
-    	return "id:"+parts[0]+","+"name:"+parts[1];
+        return (Collections.singletonMap("response", 0)).toString();
+ 
+//    	return "{id:"+parts[0]+","+"name:"+parts[1] +"}";
     }
     catch (Exception ex) {
+    	return (Collections.singletonMap("response", 1)).toString();
     }
-	return null;
+	//return null;
   }
   
   // ------------------------
