@@ -2,6 +2,7 @@ package com.houseservice.controller;
 
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -81,11 +82,16 @@ public String create(String hk_name,long hk_phone,String hk_email,String hk_user
     try {
       Users user = new Users(hk_name,hk_phone,hk_email,hk_usertype);
       usersRepository.saveAndFlush(user);
+    	JSONObject json = new JSONObject();
+      	json.put("response", "0"); //0 is sucess
+        return (json).toString();
     }
     catch (Exception ex) {
-      return "Error creating the user: " + ex.toString();
+  	JSONObject json = new JSONObject();
+  	json.put("response", "1"); //1 is error
+      return (json).toString();
     }
-    return "User succesfully created!";
+   // return "User succesfully created!";
   }
 
 
