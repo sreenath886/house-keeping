@@ -83,7 +83,7 @@ public String create(String hk_name,long hk_phone,String hk_email,String hk_user
       Users user = new Users(hk_name,hk_phone,hk_email,hk_usertype);
       usersRepository.saveAndFlush(user);
     	JSONObject json = new JSONObject();
-      	json.put("response", "0"); //0 is sucess
+      	json.put("response", "0"); //0 is success
         return (json).toString();
     }
     catch (Exception ex) {
