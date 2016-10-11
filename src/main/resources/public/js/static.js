@@ -51,9 +51,15 @@ function hk_login_post()
         url: '/api/v1/usersauth',
         success: function(response) {
         	var obj = response;
-            alert('123');
-            //alert(obj[0]);
-            window.location='dashboard.html';
+        	var status_value=obj['response'];
+           if(status_value== 0)
+        	   {
+            window.location='dashboard.jsp';
+        	   }
+           else
+        	   {
+        	   window.location='login.jsp';
+        	   }
             //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
             //var jsonString = JSON.stringify(response);
           
