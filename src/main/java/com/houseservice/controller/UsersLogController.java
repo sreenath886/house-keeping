@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.time.LocalTime;
 import java.util.Date;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,11 +36,16 @@ public String AddLog(int hk_user_id, String hk_startdate, String hk_firstcalltim
     try {
     	UsersLog user = new UsersLog(hk_user_id,hk_startdate,hk_firstcalltime,hk_callId);
     	usersLogRepository.save(user);
+      	JSONObject json = new JSONObject();
+      	json.put("response", "0"); //0 is success
+        return (json).toString();
     }
     catch (Exception ex) {
-      return "Error adding Log: " + ex.toString();
+      	JSONObject json = new JSONObject();
+      	json.put("response", "1"); //1 is error
+        return (json).toString();
     }
-    return "User Log added !";
+   // return "User Log added !";
   }
 
 

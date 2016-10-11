@@ -1,5 +1,6 @@
 package com.houseservice.controller;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,11 +28,17 @@ public String AddAddesss(long hk_user_id, String hk_locality, String hk_address,
     try {
     	UsersAddress user = new UsersAddress(hk_user_id,hk_locality,hk_address,hk_housetype,hk_numberhours);
       usersAddressRepository.saveAndFlush(user);
+  	JSONObject json = new JSONObject();
+  	json.put("response", "0"); //0 is success
+    return (json).toString();
     }
     catch (Exception ex) {
-      return "Error adding address: " + ex.toString();
+      	JSONObject json = new JSONObject();
+      	json.put("response", "1"); //1 is error
+        return (json).toString();
+      //return "Error adding address: " + ex.toString();
     }
-    return "User address added !";
+    //return "User address added !";
   }
 
 
