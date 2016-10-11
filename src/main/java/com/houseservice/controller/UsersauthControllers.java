@@ -3,6 +3,8 @@ import java.util.Collections;
 
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,12 +37,15 @@ public class UsersauthControllers {
     	session.setAttribute("UserName",parts[1]);
         String username = (String) session.getAttribute("UserName");
         System.out.println(username);
-        return (Collections.singletonMap("response", 0)).toString();
- 
-//    	return "{id:"+parts[0]+","+"name:"+parts[1] +"}";
+    	JSONObject json = new JSONObject();
+    	json.put("response", "0");
+        return (json).toString();
     }
     catch (Exception ex) {
-    	return (Collections.singletonMap("response", 1)).toString();
+       	JSONObject json = new JSONObject();
+    	json.put("response", "1");
+        return (json).toString();
+    	//    	return (Collections.singletonMap("response", 1)).toString();
     }
 	//return null;
   }
@@ -52,5 +57,15 @@ public class UsersauthControllers {
   // Wire the UserDao used inside this controller.
   @Autowired
   private UsersauthRepository userDao;
-  
+
 } // class UserController
+
+
+
+
+
+
+
+
+
+
