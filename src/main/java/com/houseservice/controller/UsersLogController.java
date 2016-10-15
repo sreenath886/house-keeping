@@ -30,12 +30,12 @@ private UsersLogRepository usersLogRepository ;
 @ResponseBody
 public String AddLog(long hk_user_id, String hk_startdate, long hk_firstcalltime, String hk_callId) {
 	//Use service to get call id
-	//String callid = new GenerateCallId().randomAlphaNumericCallId(30);
-	//hk_callId = callid;
+	String callid = new GenerateCallId().randomAlphaNumericCallId(30);
+	hk_callId = callid;
 	//Use service to get call id
     try {
     	UsersLog userl = new UsersLog(hk_user_id,hk_startdate,hk_firstcalltime,hk_callId);
-    	System.out.println(hk_user_id + " = "+ hk_startdate+ " = "+ hk_firstcalltime+" = "+hk_callId);
+    	//System.out.println(hk_user_id + " = "+ hk_startdate+ " = "+ hk_firstcalltime+" = "+hk_callId);
     	usersLogRepository.save(userl);
       	JSONObject json = new JSONObject();
       	json.put("response", "0"); //0 is success

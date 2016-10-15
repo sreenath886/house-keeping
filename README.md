@@ -1,7 +1,3 @@
-# house-keeping
-
-List of services
-
 POST	save msg	http://localhost:8181/api/v1/message/create?message=new test guys&email=vijay@gmail.com	@All
 			
 GET	List services	http://localhost:8181/api/v1/services	
@@ -14,9 +10,9 @@ GET	get user id 	http://localhost:8181/api/v1/specificuserid?hk_phone=1111&hk_em
 			
 POST	Delete user	http://localhost:8181/api/v1/user/delete?id=11	@Admin
 			
-POST	Add User  address	http://localhost:8181/api/v1/user/addressadd?hk_user_id=23&hk_locality=boobsandra&hk_address=no12 ,sssssss&hk_housetype=2&hk_numberhours=3	@Register
+POST	Add User  address	http://localhost:8181/api/v1/user/addressadd?hk_user_id=26&hk_locality=2&hk_address=no12 ,sssssss,bomi&hk_housetype=2&hk_numberhours=3	@Register
 			
-POST	Add User Log	http://localhost:8181/api/v1/user/log1?hk_user_id=3&hk_startdate=06-02-2016&hk_firstcalltime=11:30:11	@Loggedin/@Register
+POST	Add User Log	http://localhost:8181/api/v1/user/log1?hk_user_id=24&hk_startdate=06-02-2016&hk_firstcalltime=24	@Loggedin/@Register
 			
 			
 			
