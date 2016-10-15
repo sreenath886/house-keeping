@@ -30,6 +30,7 @@ function time_pick()
 
 function hk_signup_one_post()
 {
+	//hide_divs();
 	var x=1;
 	if( $('#hk_name').val()==""||$('#hk_name').val()==null)
 		{
@@ -42,7 +43,7 @@ function hk_signup_one_post()
 	
 	//alert(x);
 	var usertype = "1";
-	 $.ajax({
+		 $.ajax({
 	        dataType: "json",
 	        type: "POST",
 	        data: {
@@ -53,16 +54,25 @@ function hk_signup_one_post()
 	        },
 	        url: '/api/v1/user/create',
 	        success: function(response) {
-	            alert('user inserted');
-	            //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
-	            //var jsonString = JSON.stringify(response);
-	          
+	        	var obj = response;
+	            var status_value=obj['response'];
+	            if(status_value== 0)
+	         	   {
+	            	 //alert('user inserted');
+	            	hide_divs();
+	             //window.location='dashboard.jsp';
+	         	   }
+	            else
+	            	{
+	            	 alert('Got Some Error.Please try with differant Email Id!! ');
+	            	}
+	           
 
 	        }
 	    });
 	
 	
-	hide_divs();
+	
 }
 function hk_signup_two_post()
 {
@@ -92,16 +102,30 @@ function hk_signup_two_post()
 	        dataType: "json",
 	        type: "POST",
 	        data: {
-	        	//hk_location: $('#location').val(),
-	        	//hk_address: $('#hk_address').val(),
-	        	//hk_house_type: $('#house_type').val(),
-	        	//hk_time-pick: $('#time-pick').val(),
+	        	hk_user_id : 2,
+	        	hk_locality: $('#location').val(),
+	        	hk_address: $('#hk_address').val(),
+	        	hk_housetype: $('#house_type').val(),
+	        	hk_numberhours: $('#time-pick').val(),
 	        	//hk_datepicker: $('#datepicker').val(),
 	        	//hk_time_selector:$('#time_selector').val()
 	        },
-	        url: '/api/v1/users/create2',
+	        url: '/api/v1/user/addressadd',
 	        success: function(response) {
-	            alert('123');
+	           // alert('123');
+	            var obj = response;
+	            var status_value=obj['response'];
+	            if(status_value== 0)
+	         	   {
+	            	 //alert('user inserted');
+	            	window.location='order_revised.jsp';
+	         	   }
+	            else
+	            	{
+	            	 alert('Got Some Error ');
+	            	}
+	            
+	            
 	            //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
 	            //var jsonString = JSON.stringify(response);
 	          

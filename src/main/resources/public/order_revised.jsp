@@ -16,6 +16,10 @@ $(document).ready(function() {
 
 </script> 
 <link rel="stylesheet" href="css/order.css">
+<link rel="stylesheet" href="css/invoice.css">
+
+
+
 </head>
 <div class="header"></div>
     
@@ -26,96 +30,187 @@ $(document).ready(function() {
 		</div><!-- end: fh5co-parallax -->
 		<!-- end:fh5co-hero -->
 		<div id="fh5co-contact">
-			<div class="container">
-				
+					<div class="container">
+				<div class="container">
+			 
+				<form action="#">
 					<div class="row">
-						<div class="col-md-6 animate-box">
-							<h3 class="section-title">Additional Services</h3>
-							
-						</div>
+						<div class="col-md-6 animate-box" style="margin-left: 250px;">
+							<div class="row">
+							<div id="login2"> <h1> Your Invoice Details</h1></div>
+							    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="/images/logo.png" style="width:40%; max-width:60px;max-height:100px;"><h4>House keeping pvt Ltd</h4>
+                            </td>
+                            
+                            <td>
+                            <br>
+                                Invoice #: 1238<br>
+                                Created: January 1, 2017<br>
+                                Due: February 1, 2017
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Next Step Webs, Inc.<br>
+                                12345 Sunny Road<br>
+                                Sunnyville, TX 12345
+                            </td>
+                            
+                            <td>
+                                Vijay<br>
+                                Sree<br>
+                                house@example.com
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+                
+                <td>
+                    Check #
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    Cash On Delivery
+                </td>
+                
+                <td>
+                    
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Item
+                </td>
+                
+                <td>
+                    Price
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                    General House Keeping
+                </td>
+                
+                <td>
+                    $300.00
+                </td>
+            </tr>
+            
+            
+            
+            
+            
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                   Total: $300.00
+                </td>
+            </tr>
+            
+            
+             <tr class="heading">
+                <td>
+                    ADDITIONAL SERVICES
+                </td>
+                
+                <td>
+                    
+                </td>
+            </tr>
+             
+            <tr class="item">
+                <td>
+                   <input type="checkbox" value="100" id="ONE" name="check1" checked /> Kitchen Cleaning
+                </td>
+                
+                <td>
+                    $100.00
+                </td>
+            </tr>
+             
+            <tr class="item">
+                <td>
+                 <input type="checkbox" value="200" id="two" name="check2"  />   Floor Cleaning
+                </td>
+                
+                <td>
+                    $200.00
+                </td>
+            </tr>
+             <tr class="item">
+                <td>
+                 <input type="checkbox" value="100" id="three" name="check3"  />   Bathroom Cleaning
+                </td>
+                
+                <td>
+                    $100.00
+                </td>
+            </tr>
+             <tr class="item">
+                <td>
+                 <input type="checkbox" value="200" id="four" name="check4"  />   Bedroom Cleaning
+                </td>
+                
+                <td>
+                    $300.00
+                </td>
+            </tr>
+        </table>
+        
+        
+        
+        
 					
-					</div>
-					<div class="fh5co-parallax" style="height: 100px;" data-stellar-background-ratio="0.5">
-					
-					 <section title=".roundedOne">
-    <!-- .roundedOne -->
-    <div class="roundedOne">
-      <input type="checkbox" value="None" id="roundedOne" name="check" checked />
-      <label for="roundedOne">Room Services</label>
-      <input type="checkbox" value="None" id="roundedOne" name="check" checked />
-      <label for="roundedOne">Floor Service</label>
-      <input type="checkbox" value="None" id="roundedOne" name="check" checked />
-      <label for="roundedOne">Cleaning Services</label>
-       <input type="checkbox" value="None" id="roundedOne" name="check" checked />
-      <label for="roundedOne">Free Services</label>
     </div>
-    
-    <!-- end .roundedOne -->
-  </section>
-					  </div>
-				<div class="row"style="margin-top:2%;">
-						<div class="col-md-6 animate-box">
-							<h3 class="section-title">Order Details</h3>
-							
-						</div>
 					
-					</div>	  
-				<div class="col-md-4 animate-box">
-							<div><form class="contact-form">
-								<div class="form-group">
-									<label for="name" >Name::  </label><label for="name" >Sreenath</label>
-									
-								</div>
-								<div class="form-group">
-									<label for="name" >Email::  </label><label for="name" >Sreenath@gmail.com</label>
-								</div>
-								<div class="form-group">
-								<label for="name" >Email::  </label><label for="name" >Sreenath@gmail.com</label>
+							
+								<div class="col-md-16">
+									<div class="form-group">
+										  <input type="button" id="book_button"  onclick="hk_signup_two_post();"  value="Finish" />
 									</div>
-								
 								</div>
-							</form>
+							</div>
 						</div>
 						
-						<div class="col-md-4 animate-box">
-							
-							<div><form class="contact-form">
-								<div class="form-group">
-									<label for="name" >Order Id::  </label><label for="name" >1234321</label>
-									
-								</div>
-								<div class="form-group">
-									<label for="name" >Location::  </label><label for="name" >Madiwala</label>
-								</div>
-								<div class="form-group">
-								<label for="name" >Date And Time::  </label><label for="name" >12-01-2017</label>
-									</div>
-								<div class="form-group">
-									<input type="submit" id="btn-submit" onclick="hk_contact_postsd();" class="btn btn-send-message btn-md" value="Finish">
-								</div>
-								</div>
-							</form>
-						</div>
-						
-						<div class="col-md-4 animate-box">
-							
-							<div><form class="contact-form">
-								<div class="form-group">
-									<label for="name" >Service::  </label><label for="name" >cleanning</label>
-									
-								</div>
-								<div class="form-group">
-									<label for="name" >Time estimatted::  </label><label for="name" >2h</label>
-								</div>
-								<div class="form-group">
-								<label for="name" >phone  </label><label for="name" >22987543323</label>
-									</div>
-								
-								</div>
-							</form>
-						</div>
+					</div>
+				</form>
 			</div>
-		</div>
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+			</div>
+		</div> 
 
     
     <div class="footer"></div>
