@@ -22,11 +22,11 @@ public class UsersLog {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
 	  
-  public int hk_user_id;
+  public long hk_user_id;
   
   private String  hk_startdate;
   
-  private String hk_firstcalltime;
+  private long hk_firstcalltime;
 
   private String  hk_callId;
   
@@ -59,11 +59,11 @@ public void setId(long id) {
 	this.id = id;
 }
 
-public int getHk_user_id() {
+public long getHk_user_id() {
 	return hk_user_id;
 }
 
-public void setHk_user_id(int hk_user_id) {
+public void setHk_user_id(long hk_user_id) {
 	this.hk_user_id = hk_user_id;
 }
 
@@ -75,11 +75,11 @@ public void setHk_startdate(String hk_startdate) {
 	this.hk_startdate =  hk_startdate;
 }
 
-public String getHk_firstcalltime() {
+public long getHk_firstcalltime() {
 	return hk_firstcalltime;
 }
 
-public void setHk_firstcalltime(String hk_firstcalltime) {
+public void setHk_firstcalltime(long hk_firstcalltime) {
 	this.hk_firstcalltime = hk_firstcalltime;
 }
 
@@ -134,7 +134,7 @@ public void setHk_frequency(int hk_frequency) {
 	this.hk_frequency = hk_frequency;
 }
 
-public UsersLog(int hk_user_id, String hk_startdate, String hk_firstcalltime, String hk_callId) {
+public UsersLog(long hk_user_id, String hk_startdate, long hk_firstcalltime, String hk_callId) {
 	super();
 	this.hk_user_id = hk_user_id;
 	this.hk_startdate = hk_startdate;

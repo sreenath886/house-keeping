@@ -11,7 +11,10 @@ import com.houseservice.model.EmployeeTimePool;
 
 @Repository
 public interface EmployeeSchRepository extends JpaRepository<EmployeeTimePool,Long> {
-	@Query("select locality from EmployeeTimePool  ")
-	List <String> querybyemail();
+//	@Query("select locality from EmployeeTimePool where hk_zone = ?1  ")
+//	List <String> querybyemail(String hk_zone);
 
+	@Query("select id,hk_endtime from EmployeeTimePool where hk_date= ?1 and locality = ?2 order by hk_endtime desc ")
+	List <EmployeeTimePool> querybyemail(String hk_date,String locality);	
+	
 }

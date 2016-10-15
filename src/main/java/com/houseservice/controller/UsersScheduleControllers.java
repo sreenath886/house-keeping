@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.houseservice.model.EmployeeTimePool;
 import com.houseservice.repository.EmployeeSchRepository;
 
 /**
@@ -20,10 +21,10 @@ public class UsersScheduleControllers {
 
   @RequestMapping(value="empschedule",method = RequestMethod.GET)
   @ResponseBody
- public List<String> getSchedule(){
+ public List<EmployeeTimePool> getSchedule(String hk_date,String locality){
 
     try {
-    	List<String> retval = userDao.querybyemail();
+    	List<EmployeeTimePool> retval = userDao.querybyemail(hk_date,locality);
 
         return retval;    
     }
