@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.houseservice.model.UsersAddress;
 import com.houseservice.repository.UsersAddressRepository;
+import com.houseservice.repository.UsersLogRepository;
+import com.houseservice.service.GenerateCallId;
 
 
 
@@ -19,18 +21,29 @@ import com.houseservice.repository.UsersAddressRepository;
 public class UsersAddressAddController {
 @Autowired
 private UsersAddressRepository usersAddressRepository ;
+private UsersLogRepository usersLogRepository;
 
 //Add user address
-@RequestMapping(value="user/addressadd",method = RequestMethod.POST)
+@RequestMapping(value="user/addaddresslog",method = RequestMethod.POST)
 @ResponseBody
-public String AddAddesss(long hk_user_id, String hk_locality, String hk_address, long hk_housetype,
-		long hk_numberhours) {
+public String AddAddessLog(long hk_user_id, long hk_locality, String hk_address, long hk_housetype,
+		long hk_numberhours,String hk_startdate, long hk_firstcalltime, String hk_callId) {
     try {
     	UsersAddress user = new UsersAddress(hk_user_id,hk_locality,hk_address,hk_housetype,hk_numberhours);
-      usersAddressRepository.saveAndFlush(user);
-  	JSONObject json = new JSONObject();
-  	json.put("response", "0"); //0 is success
-    return (json).toString();
+        usersAddressRepository.saveAndFlush(user);
+        //vj
+//        UsersLogController().AddLog(UsersLog,redirectattributes);
+
+    	//String callid = new GenerateCallId().randomAlphaNumericCallId(30);
+    	//hk_callId = callid;
+        String userlog = new UsersLogController().AddLog(hk_user_id,hk_startdate,hk_firstcalltime,hk_callId);
+        System.out.println(userlog + "response from user log cont");
+        //vj
+  	    JSONObject json = new JSONObject();
+  	    json.put("response", "0"); //0 is success
+  
+  //	    return "redirect:user/log1";
+ 	    return (json).toString();
     }
     catch (Exception ex) {
       	JSONObject json = new JSONObject();
@@ -38,6 +51,9 @@ public String AddAddesss(long hk_user_id, String hk_locality, String hk_address,
         return (json).toString();
       //return "Error adding address: " + ex.toString();
     }
+
+    //vj
+    //vj
     //return "User address added !";
   }
 

@@ -28,14 +28,15 @@ private UsersLogRepository usersLogRepository ;
 //Add user address
 @RequestMapping(value="user/log1",method = RequestMethod.POST)
 @ResponseBody
-public String AddLog(int hk_user_id, String hk_startdate, String hk_firstcalltime, String hk_callId) {
+public String AddLog(long hk_user_id, String hk_startdate, long hk_firstcalltime, String hk_callId) {
 	//Use service to get call id
-	String callid = new GenerateCallId().randomAlphaNumericCallId(30);
-	hk_callId = callid;
+	//String callid = new GenerateCallId().randomAlphaNumericCallId(30);
+	//hk_callId = callid;
 	//Use service to get call id
     try {
-    	UsersLog user = new UsersLog(hk_user_id,hk_startdate,hk_firstcalltime,hk_callId);
-    	usersLogRepository.save(user);
+    	UsersLog userl = new UsersLog(hk_user_id,hk_startdate,hk_firstcalltime,hk_callId);
+    	System.out.println(hk_user_id + " = "+ hk_startdate+ " = "+ hk_firstcalltime+" = "+hk_callId);
+    	usersLogRepository.save(userl);
       	JSONObject json = new JSONObject();
       	json.put("response", "0"); //0 is success
         return (json).toString();
@@ -43,6 +44,7 @@ public String AddLog(int hk_user_id, String hk_startdate, String hk_firstcalltim
     catch (Exception ex) {
       	JSONObject json = new JSONObject();
       	json.put("response", "1"); //1 is error
+      	System.out.println(ex + " errrror");
         return (json).toString();
     }
    // return "User Log added !";

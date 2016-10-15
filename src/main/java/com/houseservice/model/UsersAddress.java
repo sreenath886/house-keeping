@@ -19,7 +19,7 @@ public class UsersAddress {
 	
   public long hk_user_id;
  
-  private String hk_locality;
+  private long hk_locality;
   
   private String hk_address;
 
@@ -42,7 +42,7 @@ public UsersAddress() {
 	// TODO Auto-generated constructor stub
 }
 
-public UsersAddress(long hk_user_id, String hk_locality, String hk_address, long hk_housetype,
+public UsersAddress(long hk_user_id, long hk_locality, String hk_address, long hk_housetype,
 		long hk_numberhours) {
 	super();
 	this.hk_user_id = hk_user_id;
@@ -68,11 +68,11 @@ public void setHk_user_id(long hk_user_id) {
 	this.hk_user_id = hk_user_id;
 }
 
-public String getHk_locality() {
+public long getHk_locality() {
 	return hk_locality;
 }
 
-public void setHk_locality(String hk_locality) {
+public void setHk_locality(long hk_locality) {
 	this.hk_locality = hk_locality;
 }
 
