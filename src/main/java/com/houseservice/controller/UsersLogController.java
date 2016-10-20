@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.time.LocalTime;
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +30,10 @@ private UsersLogRepository usersLogRepository ;
 //Add user address
 @RequestMapping(value="user/log1",method = RequestMethod.POST)
 @ResponseBody
-public String AddLog(long hk_user_id, String hk_startdate, long hk_firstcalltime, String hk_callId) {
+public String AddLog(long hk_user_id, String hk_startdate, long hk_firstcalltime, String hk_callId,HttpSession session)
+{
+	String user_id = (String) session.getAttribute("Userid");
+	hk_user_id=Long.parseLong(user_id);
 	//Use service to get call id
 	String callid = new GenerateCallId().randomAlphaNumericCallId(30);
 	hk_callId = callid;

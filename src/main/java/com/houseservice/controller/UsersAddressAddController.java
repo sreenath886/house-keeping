@@ -1,5 +1,7 @@
 package com.houseservice.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +29,10 @@ private UsersLogRepository usersLogRepository;
 @RequestMapping(value="user/addressadd",method = RequestMethod.POST)
 @ResponseBody
 public String AddAddessLog(long hk_user_id, long hk_locality, String hk_address, long hk_housetype,
-		long hk_numberhours) {
+		long hk_numberhours,HttpSession session) {
+	String user_id = (String) session.getAttribute("Userid");
+	hk_user_id=Long.parseLong(user_id);
+	
     try {
     	UsersAddress user = new UsersAddress(hk_user_id,hk_locality,hk_address,hk_housetype,hk_numberhours);
         usersAddressRepository.saveAndFlush(user);
