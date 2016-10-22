@@ -1,9 +1,5 @@
 package com.houseservice.controller;
 
-import java.text.DateFormat;
-import java.time.LocalTime;
-import java.util.Date;
-
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
@@ -28,7 +24,7 @@ public class UsersLogController {
 private UsersLogRepository usersLogRepository ;
 
 //Add user address
-@RequestMapping(value="user/log1",method = RequestMethod.POST)
+@RequestMapping(value="user/loginsert",method = RequestMethod.POST)
 @ResponseBody
 public String AddLog(long hk_user_id, String hk_startdate, long hk_firstcalltime, String hk_callId,HttpSession session)
 {

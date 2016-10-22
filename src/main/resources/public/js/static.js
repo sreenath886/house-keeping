@@ -189,4 +189,46 @@ function hk_location_get()
 
 }
 
+
+//Servicescatalog Get
+function hk_servicescatalog_get()
+{
+	//alert(123);
+    $.ajax({
+        dataType: "json",
+        async: false,
+        type: "GET",
+        url: '/api/v1/servicescatalouge',
+        success: function(response) {
+  
+            var obj = response;
+           // alert(obj);
+            var $grouplist = $('.hk_servicecatalog');
+            /* 
+             "obj" is evaluated at this point if server responded 
+             with "application/json" or similar.
+             */
+        
+                //alert(response.data[i].user_email);
+            	for (var i = 0; i < obj.length; i++) {
+            		
+            		if(obj[i].id != 2  )
+            			{
+            			alert(obj[i].id);
+                     $('<tr class="item">' + '<td>' +' <input type="checkbox" id="200" value='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
+                   //  alert(obj[i].hk_servicename);
+            			}
+                   //  $('#hk_servicecatalog').append( '<tr><td>' +  <input type="checkbox" value="200" id="two" name="check2"  /> +  i + '</td></tr>' );
+                   if(obj[i].id===1)  
+                     {
+                	   $('#hk_total').html(obj[i].hk_serviceprice);
+                     }
+                    // total
+                     }
+                 
+
+        }
+    });
+
+}
 	

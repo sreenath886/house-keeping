@@ -15,6 +15,7 @@
       <script src="js/jquery-ui.1.1.js"></script>
         <script>
   $( function() {
+	 var h_val='';
      $( "#datepicker" ).datepicker({
     	 showOtherMonths: true,
     	    selectOtherMonths: true
@@ -39,6 +40,7 @@ $(document).ready(function() {
 	$('.footer').load("footer.jsp"); 
 	hk_services_get();
         index_book_divs();
+        hk_servicescatalog_get();
       //  $('#book_div').hide();
  $('#book_div').show();
   // $('#book_div0').show();
@@ -47,6 +49,8 @@ $(document).ready(function() {
 });
 
 </script> 
+<link rel="stylesheet" href="css/order.css">
+<link rel="stylesheet" href="css/invoice.css">
 </head>
 <div class="header"></div>
     
@@ -139,7 +143,7 @@ $(document).ready(function() {
 									<div class="form-group">
 										<div id='date-pk' ><div class="date-txt">Recomanded Hr's
     <input type='button' value='-' class='qtyminus' field='quantity' />
-    <input type='text' id="time-pick" name='quantity' value='0 hr' class='qty' />
+    <input type='text' id="time-pick" name='quantity' value='0' class='qty' />
     <input type='button' value='+' class='qtyplus' field='quantity' /></div>
 </div>
 									</div>
@@ -171,8 +175,161 @@ $(document).ready(function() {
 				</form>
 			</div>
 			</div>
-			</div>
 			
+			 <div id="fhc6o-sub-menu"  class="fhc6o-sub-menu">
+			<div id="fh5co-contact">
+					<div class="container">
+				<div class="container">
+			 
+				<form action="#">
+					<div class="row">
+						<div class="col-md-6 animate-box" style="margin-left: 250px;">
+							<div class="row">
+							<div id="login2"> <h1> Your Invoice Details</h1></div>
+							    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="/images/logo.png" style="width:40%; max-width:60px;max-height:100px;"><h4>House keeping pvt Ltd</h4>
+                            </td>
+                            
+                            <td>
+                            <br>
+                                Invoice #: 1238<br>
+                                Created: January 1, 2017<br>
+                                Due: February 1, 2017
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td>
+                                Next Step Webs, Inc.<br>
+                                12345 Sunny Road<br>
+                                Sunnyville, TX 12345
+                            </td>
+                            
+                            <td>
+                                Vijay<br>
+                                Sree<br>
+                                house@example.com
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+                
+                <td>
+                    Check #
+                </td>
+            </tr>
+            
+            <tr class="details">
+                <td>
+                    Cash On Delivery
+                </td>
+                
+                <td>
+                    
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Item
+                </td>
+                
+                <td>
+                    Price
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                    General House Keeping
+                </td>
+                
+                <td id ="hk_total">
+                    $300.00
+                </td>
+            </tr>
+            
+            
+            
+            
+            
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                   Total: $300.00
+                </td>
+            </tr>
+            
+            
+             <tr class="heading" id="">
+                <td>
+                    ADDITIONAL SERVICES
+                </td>
+                
+                <td>
+                    
+                </td>
+            </tr>
+             </table>
+            <table class="hk_servicecatalog" id="hk_servicecatalogs">
+        </table>
+        
+        
+        
+        
+					
+    </div>
+					
+							
+								<div class="col-md-16">
+									<div class="form-group">
+										  <input type="button" id="book_button"  onclick="hk_signup_two_post();"  value="Finish" />
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</form>
+			</div>
+			</div>
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+			</div>
+		</div> 
+			
+			
+			
+			
+			
+			</div>	
 			
 		</div>
 

@@ -2,26 +2,26 @@
 function time_pick()
 {
 	var h_val=$('#house_type').val();
-	var x='0';
+	var x=0;
 	if(h_val== 0)
 		{
-		x='0';
+		x=0;
 		}
 	else if(h_val==1)
 		{
-		x='1 hr';
+		x=1;
 		}
 	else if(h_val== 2)
 	{
-			x='2 hr';
+			x=2;
 	}
 	else if(h_val== 3)
 	{
-	x='4 hr';
+	x=4;
 	}
 	else if(h_val== 4)
 	{
-	x='5 hr';
+	x=5;
 	}
 	
    $('#time-pick').val(x);
@@ -76,7 +76,7 @@ function hk_signup_one_post()
 }
 function hk_signup_two_post()
 {
-	window.location='order_revised.jsp';
+	//window.location='order_revised.jsp';
 	
 	var x=1;
 	if( $('#location').val()==""||$('#location').val()=="Select your Location")
@@ -98,13 +98,14 @@ function hk_signup_two_post()
 	
 	var usertype =$('#location').val();
 	//alert(usertype);
+	 time_date_insert();
 	 $.ajax({
 	        dataType: "json",
 	        type: "POST",
 	        data: {
-	        	hk_user_id : 2,
+	        	hk_user_id : 0,
 	        	hk_locality: $('#location').val(),
-	        	hk_address: $('#hk_address').val(),
+	        	hk_address: $('#address').val(),
 	        	hk_housetype: $('#house_type').val(),
 	        	hk_numberhours: $('#time-pick').val(),
 	        	//hk_datepicker: $('#datepicker').val(),
@@ -114,6 +115,60 @@ function hk_signup_two_post()
 	        success: function(response) {
 	           // alert('123');
 	            var obj = response;
+	            var status_value=obj['response'];
+	            if(status_value== 0)
+	         	   {
+	            	
+	            	// alert('user inserted');
+	            	  time_date_insert();
+	         	   }
+	            else
+	            	{
+	            	 alert('Got Some Error ');
+	            	}
+	            
+	            
+	            //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
+	            //var jsonString = JSON.stringify(response);
+	          
+
+	        }
+	    });
+	
+	
+	hide_divs();
+}
+
+function time_date_insert()
+{
+	//alert('from time-date');
+	
+	var h_val= $('#datepicker').val();
+	alert(h_val);
+	var y=1;
+	if( h_val ==""||h_val==0)
+		{
+		var y=0;		
+		}
+	
+	//alert(y);
+	if(y=== 1)
+		{
+		//alert(h_val);
+	 $.ajax({
+	        dataType: "json",
+	        type: "POST",
+	        data: {
+	        	hk_user_id : 0,
+	        	hk_startdate: h_val,
+	        	hk_firstcalltime: $('#time_selector').val(),
+	        	hk_callId: 'no'
+	        	//hk_datepicker: $('#datepicker').val(),
+	        	//hk_time_selector:$('#time_selector').val()
+	        },
+	        url: '/api/v1/user/loginsert',
+	        success: function(response) {
+	             var obj = response;
 	            var status_value=obj['response'];
 	            if(status_value== 0)
 	         	   {
@@ -132,7 +187,5 @@ function hk_signup_two_post()
 
 	        }
 	    });
-	
-	
-	hide_divs();
-}
+		}
+	}
