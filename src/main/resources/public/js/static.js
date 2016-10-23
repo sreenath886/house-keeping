@@ -212,10 +212,10 @@ function hk_servicescatalog_get()
                 //alert(response.data[i].user_email);
             	for (var i = 0; i < obj.length; i++) {
             		
-            		if(obj[i].id != 2  )
+            		if(obj[i].is_main_service === 0 )
             			{
-            			alert(obj[i].id);
-                     $('<tr class="item">' + '<td>' +' <input type="checkbox" id="200" value='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
+            			//alert(obj[i].id);
+                     $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" id="200"  value='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
                    //  alert(obj[i].hk_servicename);
             			}
                    //  $('#hk_servicecatalog').append( '<tr><td>' +  <input type="checkbox" value="200" id="two" name="check2"  /> +  i + '</td></tr>' );
@@ -230,5 +230,10 @@ function hk_servicescatalog_get()
         }
     });
 
+}
+
+function hk_check_invoice()
+{
+	alert(18);
 }
 	
