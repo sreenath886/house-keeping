@@ -24,7 +24,7 @@
     .on( "change", function() {
     	//alert(123);
     	var h_val=$('#datepicker').val();
-    	alert(h_val);
+    	//alert(h_val);
      // to.datepicker( "option", "minDate", getDate( this ) );
     })
     
@@ -43,10 +43,11 @@ $(document).ready(function() {
         hk_servicescatalog_get();
       //  $('#book_div').hide();
  $('#book_div').show();
+ //$('#book_div3').show();
   // $('#book_div0').show();
    $('#datepicker').val('Select Your Date');
    hk_localities_get();
-});
+  });
 
 </script> 
 <link rel="stylesheet" href="css/order.css">
@@ -175,7 +176,7 @@ $(document).ready(function() {
 				</form>
 			</div>
 			</div>
-			
+			<div class="container" id="book_div3">
 			 <div id="fhc6o-sub-menu"  class="fhc6o-sub-menu">
 			<div id="fh5co-contact">
 					<div class="container">
@@ -198,10 +199,9 @@ $(document).ready(function() {
                             
                             <td>
                             <br>
-                                Invoice #: 1238<br>
-                                Created: January 1, 2017<br>
-                                Due: February 1, 2017
-                            </td>
+                                <label id="invoice_id">Invoice Number</label><br>
+                               <label id="invoice_date"> invoice date</label><br>
+                                                           </td>
                         </tr>
                     </table>
                 </td>
@@ -212,15 +212,18 @@ $(document).ready(function() {
                     <table>
                         <tr>
                             <td>
-                                Next Step Webs, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, TX 12345
+                                <label>Billing address</label><br>
+                                <label id="invoice_name"> address</label><br>
+                               <label id="invoice_address"> address</label><br>
+                               
+                                
                             </td>
                             
                             <td>
-                                Vijay<br>
-                                Sree<br>
-                                house@example.com
+                          
+                               <label id="order_date"> Sree</label><br>
+                              <label id="invoice_email"> email</label><br>
+                                 <label id="invoice_phone"> phone</label><br>
                             </td>
                         </tr>
                     </table>
@@ -233,7 +236,7 @@ $(document).ready(function() {
                 </td>
                 
                 <td>
-                    Check #
+                    COD #
                 </td>
             </tr>
             
@@ -274,8 +277,8 @@ $(document).ready(function() {
             <tr class="total">
                 <td></td>
                 
-                <td>
-                   Total: $300.00
+                <td id ="hk_grand_total">
+                   Total: 
                 </td>
             </tr>
             
@@ -292,7 +295,7 @@ $(document).ready(function() {
              </table>
             <table class="hk_servicecatalog" id="hk_servicecatalogs">
         </table>
-        
+      
         
         
         
@@ -302,7 +305,8 @@ $(document).ready(function() {
 							
 								<div class="col-md-16">
 									<div class="form-group">
-										  <input type="button" id="book_button"  onclick="hk_signup_two_post();"  value="Finish" />
+									<input type="hidden" id="hk_invoice_ids" class="form-control" placeholder="Name">
+										  <input type="button" class="book_but" id="book_button"  onclick="hk_invoice_update();"  value="Finish" />
 									</div>
 								</div>
 							</div>
@@ -324,7 +328,7 @@ $(document).ready(function() {
 						
 			</div>
 		</div> 
-			
+			</div>
 			
 			
 			

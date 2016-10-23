@@ -3,6 +3,7 @@ function hide_divs()
 {
      $('#book_div').hide();
         $('#book_div0').show();
+        $('#book_div3').hide();
     
 }
 function service_book_divs()
@@ -27,11 +28,13 @@ function index_book_divs()
     {
         $('#book_div').hide();
         $('#book_div0').show();
+        $('#book_div3').hide();
     }
     else
     {
         $('#book_div').show();
         $('#book_div0').hide();
+        $('#book_div3').hide();
     }
 
 }
@@ -190,50 +193,7 @@ function hk_location_get()
 }
 
 
-//Servicescatalog Get
-function hk_servicescatalog_get()
-{
-	//alert(123);
-    $.ajax({
-        dataType: "json",
-        async: false,
-        type: "GET",
-        url: '/api/v1/servicescatalouge',
-        success: function(response) {
-  
-            var obj = response;
-           // alert(obj);
-            var $grouplist = $('.hk_servicecatalog');
-            /* 
-             "obj" is evaluated at this point if server responded 
-             with "application/json" or similar.
-             */
-        
-                //alert(response.data[i].user_email);
-            	for (var i = 0; i < obj.length; i++) {
-            		
-            		if(obj[i].is_main_service === 0 )
-            			{
-            			//alert(obj[i].id);
-                     $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" id="200"  value='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
-                   //  alert(obj[i].hk_servicename);
-            			}
-                   //  $('#hk_servicecatalog').append( '<tr><td>' +  <input type="checkbox" value="200" id="two" name="check2"  /> +  i + '</td></tr>' );
-                   if(obj[i].id===1)  
-                     {
-                	   $('#hk_total').html(obj[i].hk_serviceprice);
-                     }
-                    // total
-                     }
-                 
 
-        }
-    });
 
-}
 
-function hk_check_invoice()
-{
-	alert(18);
-}
-	
+
