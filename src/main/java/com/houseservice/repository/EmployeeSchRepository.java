@@ -11,7 +11,7 @@ import com.houseservice.model.EmployeeTimePool;
 
 @Repository
 public interface EmployeeSchRepository extends JpaRepository<EmployeeTimePool,Long> {
-
+//not in use
 	//@Query("CALL GetAvailableTime(?1,?2) "
 	//		+ "    ")
 //	List <EmployeeTimePool> queryfortime(String hk_date,String hk_zone);	

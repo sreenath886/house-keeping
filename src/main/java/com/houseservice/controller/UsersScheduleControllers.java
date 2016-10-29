@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,13 +23,9 @@ public class UsersScheduleControllers {
 
   @RequestMapping(value="empschedule",method = RequestMethod.GET)
   @ResponseBody
- public String getSchedule(String hk_date,String hk_zone){
+ public Object getSchedule(String hk_date,String hk_zone){
 
-    try {
-    	System.out.println("reached vj1");
-    	//String retval = userDao.getAvailableTime(hk_date,hk_zone);
-    	System.out.println("reached vj1.5");
-    	
+
     	//vj
     	Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -48,14 +45,19 @@ public class UsersScheduleControllers {
 			 pstmt.setString(4, hk_date);
 			 
 			 rs = pstmt.executeQuery();
-             JSONObject json = new JSONObject();
-	        
-			// String format = "%-4s%-40s%-25s\n";
+             
+             JSONArray jsonArray = new JSONArray();
+             JSONArray jsonArray2 = new JSONArray();
+             String str;
 				while(rs.next()){
-			      	json.put(rs.getInt("hk_starttime"), rs.getInt("AVAILABLE")); //0 is success
-					//	System.out.println(rs.getInt("hk_starttime"));
+					JSONObject json = new JSONObject();
+					json.put("hk_starttime",rs.getInt("hk_starttime"));
+					json.put("hk_available",rs.getInt("AVAILABLE"));
+					jsonArray.add(json);
+
 				}
-				return (json).toString();
+
+				return jsonArray;
 			 
 		    }
 		 catch (SQLException ex) {
@@ -66,11 +68,8 @@ public class UsersScheduleControllers {
 	      	System.out.println(ex + " errrror");
 	        return (json).toString();
 		}
+		
   	  
-    }
-    catch (Exception ex) {
-        return ex.toString();
-
     }
 
   }
@@ -79,7 +78,7 @@ public class UsersScheduleControllers {
   // Wire the UserDao used inside this controller.
 // @Autowired
 
-} 
+
 
 
 
