@@ -207,7 +207,7 @@ $(document).ready(function() {
 						<div class="row">
 							<div class="col-md-6">
 								<h2>HOUSEKEEPING <br>is a <b> Promise</b></h2>
-								<p><span>WHILE YOU SAVE THE WORLD<i class="icon-heart3"></i> <a href="" class="fh5co-site-name">LEAVE HOUSEKEEPING TO US</a></span></p>
+								<p><span>WE KEEP<i class="icon-heart3"></i> <a href="" class="fh5co-site-name">WHILE YOU SAVE THE WORLD</a></span></p>
 								<span><a class="btn btn-primary" href="book.jsp">Start Your Journey</a></span>
 							</div>
 						</div>
