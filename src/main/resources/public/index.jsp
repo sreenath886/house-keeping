@@ -148,7 +148,7 @@ $(document).ready(function() {
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<div style="margin-left: -50px;"><h1 id="fh5co-logo"><a href="index.jsp">House<span>Keeping</span></a></h1></div>
+						<div style="margin-left: -50px;"><h1 id="fh5co-logo"><a href="index.jsp">MYHOUSE<span>GENIE</span></a></h1></div>
 						<!-- START #fh5co-menu-wrap -->
 						
 						<nav id="fh5co-menu-wrap" role="navigation">
@@ -206,8 +206,8 @@ $(document).ready(function() {
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6">
-								<h2>HOUSEKEEP <br>is a <b> Promise</b></h2>
-								<p><span>Book with <i class="icon-heart3"></i> <a href="" class="fh5co-site-name">OUR PERFECT CLEANERS</a></span></p>
+								<h2>HOUSEKEEPING <br>is a <b> Promise</b></h2>
+								<p><span>WE KEEP<i class="icon-heart3"></i> <a href="" class="fh5co-site-name">WHILE YOU SAVE THE WORLD</a></span></p>
 								<span><a class="btn btn-primary" href="book.jsp">Start Your Journey</a></span>
 							</div>
 						</div>

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name = "employeeTimePool")
 
 
-
+//not in use
 @NamedNativeQueries({
     @NamedNativeQuery(
             name    =   "getAvailableTime",
