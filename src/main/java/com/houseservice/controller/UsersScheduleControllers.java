@@ -15,7 +15,7 @@ import com.houseservice.service.DBType;
 import com.houseservice.service.DBUtil;
 
 /**
- * Class UserController
+ * Class gives available time list
  */
 @Controller
 @RequestMapping("api/v1/")
@@ -47,8 +47,6 @@ public class UsersScheduleControllers {
 			 rs = pstmt.executeQuery();
              
              JSONArray jsonArray = new JSONArray();
-             JSONArray jsonArray2 = new JSONArray();
-             String str;
 				while(rs.next()){
 					JSONObject json = new JSONObject();
 					json.put("hk_starttime",rs.getInt("hk_starttime"));
@@ -72,7 +70,71 @@ public class UsersScheduleControllers {
   	  
     }
 
-  }
+
+/* update user selected time, in time pool */
+
+  @RequestMapping(value="updatimepool",method = RequestMethod.POST)
+  @ResponseBody
+ public Object updateSchedule(String hk_date,int hk_starttime,String hk_zone,String hk_callid,int flag){
+
+    	//vj
+    	Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rs;
+		//System.out.println("reached vj2");
+		
+		try {
+			//System.out.println("reached vj2.5");
+             conn = DBUtil.getConnection(DBType.MYSQLDB);
+			 String sql = "Update employeeTimePool as etp inner join (select min(id) as id FROM cleanu.employeeTimePool "
+			 		+ "WHERE hk_date =? AND hk_starttime=? AND hk_zone like ? AND hk_callid = '0') as A on etp.id = A.id "
+			 		+ "set etp.hk_callid = ?,etp.flag=? ";
+			 pstmt = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			 pstmt.setString(1, hk_date);
+			 pstmt.setInt(2, hk_starttime);
+			 pstmt.setString(3, hk_zone + "%");
+			 pstmt.setString(4, hk_callid);
+			 pstmt.setInt(5, flag);
+			 
+			 rs = pstmt.executeUpdate();
+ 
+			 return rs +" sucess";
+		    }
+		 catch (SQLException ex) {
+			//e.printStackTrace();
+			DBUtil.showErrorMessages(ex);
+	      	JSONObject json = new JSONObject();
+	      	json.put("response", "1"); //1 is error
+	      	System.out.println(ex + " errrror");
+	        return (json).toString();
+		}
+		
+  	  
+    }
+
+  /* update user selected time, in time pool */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
   
   // Wire the UserDao used inside this controller.
