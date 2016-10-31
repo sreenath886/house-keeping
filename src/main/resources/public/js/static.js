@@ -53,7 +53,7 @@ function hk_login_post()
         },
         url: '/api/v1/usersauth',
         success: function(response) {
-        	alert(12);
+        	//alert(12);
         	var obj = response;
         	var status_value=obj['response'];
            if(status_value== 0)
@@ -118,8 +118,11 @@ function hk_localities_get()
           
                 for (var i = 0; i < obj.length; i++) {
                     //alert(response.data[i].user_email);
+                	var x=obj[i].hk_ZONE;
+                	alert(x);
                     $('#location').append(
-                            $('<option></option>').val(obj[i].hk_LOCALITY_ID).html(obj[i].hk_LOCALITY));
+                    		
+                            $('<option id='+obj[i].hk_ZONE +' ></option>').val(obj[i].hk_LOCALITY_ID).html(obj[i].hk_LOCALITY));
 
                 }
            

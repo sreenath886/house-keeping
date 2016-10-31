@@ -18,13 +18,15 @@
 	 var h_val='';
      $( "#datepicker" ).datepicker({
     	 showOtherMonths: true,
-    	    selectOtherMonths: true
+    	 selectOtherMonths: true,
+    	 dateFormat:'d-m-yy',
     		
     })
     .on( "change", function() {
     	//alert(123);
     	var h_val=$('#datepicker').val();
-    	//alert(h_val);
+    		//alert(date);
+    	get_availabe_time(h_val)
      // to.datepicker( "option", "minDate", getDate( this ) );
     })
     
@@ -42,7 +44,7 @@ $(document).ready(function() {
         index_book_divs();
         hk_servicescatalog_get();
       //  $('#book_div').hide();
- $('#book_div').show();
+// $('#book_div').show();
  //$('#book_div3').show();
   // $('#book_div0').show();
    $('#datepicker').val('Select Your Date');
@@ -158,9 +160,7 @@ $(document).ready(function() {
 									<div class="form-group">
 										  <select name="dropdown2" id="time_selector" class="form-control" >
   <option value="0">Select your Time</option>
-  <option value="1">9 AM</option>
-  <option value="2">10 AM</option>
-  <option value="3">11 AM</option>
+ 
 		  </select>
 									</div>
 								</div>

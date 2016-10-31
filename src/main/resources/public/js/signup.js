@@ -98,7 +98,7 @@ function hk_signup_two_post()
 	
 	var usertype =$('#location').val();
 	//alert(usertype);
-	 time_date_insert();
+	// time_date_insert();
 	 $.ajax({
 	        dataType: "json",
 	        type: "POST",
@@ -144,6 +144,7 @@ function time_date_insert()
 	//alert('from time-date');
 	
 	var h_val= $('#datepicker').val();
+	var h_time_selector =$('#time_selector').val()
 	//alert(h_val);
 	var y=1;
 	if( h_val ==""||h_val==0)
@@ -161,7 +162,7 @@ function time_date_insert()
 	        data: {
 	        	hk_user_id : 0,
 	        	hk_startdate: h_val,
-	        	hk_firstcalltime: $('#time_selector').val(),
+	        	hk_firstcalltime: h_time_selector,
 	        	hk_callId: 'no'
 	        	//hk_datepicker: $('#datepicker').val(),
 	        	//hk_time_selector:$('#time_selector').val()
@@ -283,3 +284,54 @@ function hk_servicescatalog_get()
     });
 
 }
+
+function get_availabe_time(h_val)
+{
+	var hk_zone = $('#location option:selected').attr('id');
+	var y=1;
+	if( h_val ==""||hk_zone==0 ||h_val==0)
+		{
+		var y=0;		
+		}
+	
+	//alert(y);
+	if(y=== 1)
+		{
+		//alert(h_val);
+	 $.ajax({
+	        dataType: "json",
+	        type: "GET",
+	        data: {
+	        	hk_zone : hk_zone,
+	        	hk_date: h_val
+	        },
+	        url: '/api/v1/empschedule',
+	        success: function(response) {
+	             var obj = response;
+	            // alert(obj);
+	             for (var i = 0; i < obj.length; i++) {
+	                    alert(obj[i].hk_available);
+	                    var c = '';
+	                    if(obj[i].hk_available === 0)
+	                    	{
+	                    	 c = $('<option ></option>').val(obj[i].hk_available).html(obj[i].hk_starttime)
+	                    	
+	                    	}
+	                    else
+	                    	{
+	                    	 c = $('<option disabled></option>').val(obj[i].hk_available).html(obj[i].hk_starttime)
+	                    	}
+	                    $('#time_selector').append(c);
+
+	                }
+	            
+	            //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
+	            //var jsonString = JSON.stringify(response);
+	          
+
+	        }
+	    });
+		}
+	}
+
+

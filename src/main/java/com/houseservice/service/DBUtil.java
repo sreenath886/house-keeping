@@ -6,7 +6,7 @@ public class DBUtil {
 private static final String oraUser ="Event";
 private static final String oraPwd ="Mju89yhn$#";
 private static final String mysqlUser ="root";
-private static final String mysqlPwd ="root";
+private static final String mysqlPwd ="";
 private static final String oraCS = "jdbc:oracle:thin:@//dvrdfappdb001uk.dev.global.tesco.org:1521/DHORDF01.dev.global.tesco.org";
 private static final String mysqlCS ="jdbc:mysql://localhost:3306/cleanu";
 
