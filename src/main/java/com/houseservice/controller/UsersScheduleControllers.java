@@ -73,7 +73,7 @@ public class UsersScheduleControllers {
 
 /* update user selected time, in time pool */
 
-  @RequestMapping(value="updatimepool",method = RequestMethod.POST)
+  @RequestMapping(value="updatetimepool",method = RequestMethod.POST)
   @ResponseBody
  public Object updateSchedule(String hk_date,int hk_starttime,String hk_zone,String hk_callid,int flag){
 
@@ -98,7 +98,10 @@ public class UsersScheduleControllers {
 			 
 			 rs = pstmt.executeUpdate();
  
-			 return rs +" sucess";
+		      	JSONObject json = new JSONObject();
+		      	json.put("response", "0"); //1 is error
+		        return (json).toString();
+		        
 		    }
 		 catch (SQLException ex) {
 			//e.printStackTrace();
@@ -116,11 +119,45 @@ public class UsersScheduleControllers {
 
 
 
+  /* reset user selected time, in time pool */ 
 
+  @RequestMapping(value="resettimepool",method = RequestMethod.POST)
+  @ResponseBody
+ public Object resetSchedule(int hk_pid){
 
-
-
-
+    	//vj
+    	Connection conn = null;
+		PreparedStatement pstmt = null;
+		int rs;
+		//System.out.println("reached vj2");
+		
+		try {
+			//System.out.println("reached vj2.5");
+             conn = DBUtil.getConnection(DBType.MYSQLDB);
+			 String sql = "Update employeeTimePool as etp set etp.hk_callid = '0' where etp.hk_pid= ? "
+			 		+ " ";
+			 pstmt = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			 pstmt.setInt(1, hk_pid);
+			 
+			 rs = pstmt.executeUpdate();
+ 
+		      	JSONObject json = new JSONObject();
+		      	json.put("response", "0"); //1 is error
+		        return (json).toString();
+		        
+		    }
+		 catch (SQLException ex) {
+			//e.printStackTrace();
+			DBUtil.showErrorMessages(ex);
+	      	JSONObject json = new JSONObject();
+	      	json.put("response", "1"); //1 is error
+	      	System.out.println(ex + " errrror");
+	        return (json).toString();
+		}
+		
+  	  
+    }
+  /* reset user selected time, in time pool */
 
 
 

@@ -35,7 +35,7 @@ public class EmployeeTimePool {
   // ------------------------
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  public long id;
+  public long hk_pid;
   private String hk_date;
   private String hk_callid;
   private String hk_headstaff;
@@ -49,11 +49,11 @@ public class EmployeeTimePool {
   
   
   
-public long getId() {
-	return id;
+public long getHk_pid() {
+	return hk_pid;
 }
-public void setId(long id) {
-	this.id = id;
+public void setHk_pid(long hk_pid) {
+	this.hk_pid = hk_pid;
 }
 public String getHk_date() {
 	return hk_date;
@@ -106,7 +106,7 @@ public void setFlag(int flag) {
 public EmployeeTimePool(long id, String hk_date, String hk_callid, String hk_headstaff, int hk_starttime,
 		String hk_zone, int hk_empidA, int hk_empidB, int flag) {
 	super();
-	this.id = id;
+	this.hk_pid = hk_pid;
 	this.hk_date = hk_date;
 	this.hk_callid = hk_callid;
 	this.hk_headstaff = hk_headstaff;

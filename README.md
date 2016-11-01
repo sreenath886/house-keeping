@@ -23,4 +23,7 @@ POST	Authenticate a user	http://localhost:8181/api/v1/usersauth?hk_username=vija
 			
 GET	Locality	http://localhost:8181/api/v1/localities	@All
 
+POST	BOOK time	http://localhost:8181/api/v1/updatetimepool?hk_date=25-10-2016&hk_starttime=11&hk_zone=NE&hk_callid=Wsd2@s&flag=3
+		
+POST	unbook	http://localhost:8181/api/v1/resettimepool?hk_pid=6
 
