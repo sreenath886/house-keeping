@@ -160,14 +160,16 @@ function time_date_insert()
 	        dataType: "json",
 	        type: "POST",
 	        data: {
-	        	hk_user_id : 0,
-	        	hk_startdate: h_val,
-	        	hk_firstcalltime: h_time_selector,
+	        	hk_date :h_val,
+	        	hk_starttime:h_time_selector,
+	        	hk_zone:'N',
+	        	flag: 1,
+	        	//hk_user_id : 0,
+	        	//hk_startdate: h_val,
+	        	//hk_firstcalltime: h_time_selector,
 	        	hk_callId: 'no'
-	        	//hk_datepicker: $('#datepicker').val(),
-	        	//hk_time_selector:$('#time_selector').val()
 	        },
-	        url: '/api/v1/user/loginsert',
+	        url: '/api/v1/updatetimepool',
 	        success: function(response) {
 	             var obj = response;
 	            var status_value=obj['response'];
@@ -314,12 +316,12 @@ function get_availabe_time(h_val)
 	                    var c = '';
 	                    if(obj[i].hk_available === 0)
 	                    	{
-	                    	 c = $('<option ></option>').val(obj[i].hk_available).html(obj[i].hk_starttime)
+	                    	 c = $('<option ></option>').val(obj[i].hk_starttime).html(obj[i].hk_starttime)
 	                    	
 	                    	}
 	                    else
 	                    	{
-	                    	 c = $('<option disabled></option>').val(obj[i].hk_available).html(obj[i].hk_starttime)
+	                    	 c = $('<option disabled></option>').val(obj[i].hk_starttime).html(obj[i].hk_starttime)
 	                    	}
 	                    $('#time_selector').append(c);
 
