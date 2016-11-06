@@ -160,14 +160,16 @@ function time_date_insert()
 	        dataType: "json",
 	        type: "POST",
 	        data: {
-	        	hk_user_id : 0,
-	        	hk_startdate: h_val,
-	        	hk_firstcalltime: h_time_selector,
+	        	hk_date :h_val,
+	        	hk_starttime:h_time_selector,
+	        	hk_zone:'N',
+	        	flag: 1,
+	        	//hk_user_id : 0,
+	        	//hk_startdate: h_val,
+	        	//hk_firstcalltime: h_time_selector,
 	        	hk_callId: 'no'
-	        	//hk_datepicker: $('#datepicker').val(),
-	        	//hk_time_selector:$('#time_selector').val()
 	        },
-	        url: '/api/v1/user/loginsert',
+	        url: '/api/v1/updatetimepool',
 	        success: function(response) {
 	             var obj = response;
 	            var status_value=obj['response'];
@@ -199,16 +201,31 @@ function time_date_insert()
 function hk_check_invoice()
 {
 
+var hk_a= 0;
+hk_a= Number($("#hk_invoice_total").val());
+var type=hk_a;
+$("input[name='check2']:checked").each(function (i) {
+                type = Number(type) + Number($(this).val());
+              //  alert(type);
+                
+            });
+$('#hk_grand_total').html(type);
+//var cast = Number(hk_a);
+//hk_a=1 + cast;
+//alert(hk_a);
 	 var notChecked = [], checked = [];
-	    $(":checkbox").map(function() {
+	 	    $(":checkbox").map(function() {
 	        this.checked ? checked.push(this.id) : notChecked.push(this.id);
-	    });
+	      	    });
+	    //alert(checked);
 	    $('#hk_invoice_ids').val(checked);
+	   
+	    
 	   // var $grouplist2 = $('.hk_selected_services');
 	    
 	 //   $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" value="200"  id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
         
-	   // alert("checked: " + checked);
+	  //  alert("checked: " + checked);
 	  //  alert("not checked: " + notChecked);
 }
 
@@ -267,14 +284,15 @@ function hk_servicescatalog_get()
             		if(obj[i].is_main_service === 0 )
             			{
             			//alert(obj[i].id);
-                     $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" value="200"  id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td >'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
+                     $('<tr class="item">' + '<td>' +' <input type="checkbox" class="chk_class" onclick="hk_check_invoice();" value="'+ obj[i].hk_serviceprice +  '"id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td >'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
                    //  alert(obj[i].hk_servicename);
             			}
                    //  $('#hk_servicecatalog').append( '<tr><td>' +  <input type="checkbox" value="200" id="two" name="check2"  /> +  i + '</td></tr>' );
                    if(obj[i].id===1)  
                      {
                 	   $('#hk_total').html(obj[i].hk_serviceprice);
-                	   $('#hk_grand_total').html('Total :'+ obj[i].hk_serviceprice);
+                	   $('#hk_grand_total').html(obj[i].hk_serviceprice);
+                	   $('#hk_invoice_total').val(obj[i].hk_serviceprice);
                      }
                     // total
                      }
@@ -310,16 +328,16 @@ function get_availabe_time(h_val)
 	             var obj = response;
 	            // alert(obj);
 	             for (var i = 0; i < obj.length; i++) {
-	                    alert(obj[i].hk_available);
+	                   // alert(obj[i].hk_available);
 	                    var c = '';
 	                    if(obj[i].hk_available === 0)
 	                    	{
-	                    	 c = $('<option ></option>').val(obj[i].hk_available).html(obj[i].hk_starttime)
+	                    	 c = $('<option ></option>').val(obj[i].hk_starttime).html(obj[i].hk_starttime)
 	                    	
 	                    	}
 	                    else
 	                    	{
-	                    	 c = $('<option disabled></option>').val(obj[i].hk_available).html(obj[i].hk_starttime)
+	                    	 c = $('<option disabled></option>').val(obj[i].hk_starttime).html(obj[i].hk_starttime)
 	                    	}
 	                    $('#time_selector').append(c);
 
