@@ -275,10 +275,10 @@ $(document).ready(function() {
             
             
             <tr class="total">
-                <td></td>
+                <td>Grand Total</td>
                 
                 <td id ="hk_grand_total">
-                   Total: 
+                    
                 </td>
             </tr>
             
@@ -305,6 +305,7 @@ $(document).ready(function() {
 							
 								<div class="col-md-16">
 									<div class="form-group">
+									<input type="hidden" id="hk_invoice_total" class="form-control" placeholder="Name">
 									<input type="hidden" id="hk_invoice_ids" class="form-control" placeholder="Name">
 										  <input type="button" class="book_but" id="book_button"  onclick="hk_invoice_update();"  value="Finish" />
 									</div>

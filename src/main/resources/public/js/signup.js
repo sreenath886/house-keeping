@@ -200,12 +200,27 @@ function time_date_insert()
 //get invoice service ids
 function hk_check_invoice()
 {
-//alert(1);
+
+var hk_a= 0;
+hk_a= Number($("#hk_invoice_total").val());
+var type=hk_a;
+$("input[name='check2']:checked").each(function (i) {
+                type = Number(type) + Number($(this).val());
+              //  alert(type);
+                
+            });
+$('#hk_grand_total').html(type);
+//var cast = Number(hk_a);
+//hk_a=1 + cast;
+//alert(hk_a);
 	 var notChecked = [], checked = [];
-	    $(":checkbox").map(function() {
+	 	    $(":checkbox").map(function() {
 	        this.checked ? checked.push(this.id) : notChecked.push(this.id);
-	    });
+	      	    });
+	    //alert(checked);
 	    $('#hk_invoice_ids').val(checked);
+	   
+	    
 	   // var $grouplist2 = $('.hk_selected_services');
 	    
 	 //   $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" value="200"  id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
@@ -269,14 +284,15 @@ function hk_servicescatalog_get()
             		if(obj[i].is_main_service === 0 )
             			{
             			//alert(obj[i].id);
-                     $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" value="200"  id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td >'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
+                     $('<tr class="item">' + '<td>' +' <input type="checkbox" class="chk_class" onclick="hk_check_invoice();" value="'+ obj[i].hk_serviceprice +  '"id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td >'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
                    //  alert(obj[i].hk_servicename);
             			}
                    //  $('#hk_servicecatalog').append( '<tr><td>' +  <input type="checkbox" value="200" id="two" name="check2"  /> +  i + '</td></tr>' );
                    if(obj[i].id===1)  
                      {
                 	   $('#hk_total').html(obj[i].hk_serviceprice);
-                	   $('#hk_grand_total').html('Total :'+ obj[i].hk_serviceprice);
+                	   $('#hk_grand_total').html(obj[i].hk_serviceprice);
+                	   $('#hk_invoice_total').val(obj[i].hk_serviceprice);
                      }
                     // total
                      }
