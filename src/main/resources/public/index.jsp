@@ -21,7 +21,7 @@
     .on( "change", function() {
     	//alert(123);
     	var h_val=$('#datepicker').val();
-    	alert(h_val);
+    	//alert(h_val);
      // to.datepicker( "option", "minDate", getDate( this ) );
     })
     

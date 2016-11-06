@@ -119,7 +119,7 @@ function hk_localities_get()
                 for (var i = 0; i < obj.length; i++) {
                     //alert(response.data[i].user_email);
                 	var x=obj[i].hk_ZONE;
-                	alert(x);
+                	//alert(x);
                     $('#location').append(
                     		
                             $('<option id='+obj[i].hk_ZONE +' ></option>').val(obj[i].hk_LOCALITY_ID).html(obj[i].hk_LOCALITY));
@@ -179,7 +179,7 @@ function hk_location_get()
             //var json = [{"Id":"10","Name":"Matt"},{"Id":"1","Name":"Rock"}];
             //var jsonString = JSON.stringify(response);
             var obj = response;
-            alert(obj);
+            //alert(obj);
             //var $grouplist = $('.fh5co-sub-menu');
             /* 
              "obj" is evaluated at this point if server responded 
@@ -187,7 +187,7 @@ function hk_location_get()
              */
             for (var i = 0; i < obj.length; i++) {
                // $('<li>' + '<a>' + obj[i].sr_DESCRIPTION + '</a>' + '</li>').appendTo($grouplist);
-                alert(obj[i].hk_LOCALITY);
+                //alert(obj[i].hk_LOCALITY);
             }
 
         }
