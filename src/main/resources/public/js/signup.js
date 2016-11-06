@@ -198,7 +198,7 @@ function time_date_insert()
 //get invoice service ids
 function hk_check_invoice()
 {
-
+//alert(1);
 	 var notChecked = [], checked = [];
 	    $(":checkbox").map(function() {
 	        this.checked ? checked.push(this.id) : notChecked.push(this.id);
@@ -208,7 +208,7 @@ function hk_check_invoice()
 	    
 	 //   $('<tr class="item">' + '<td>' +' <input type="checkbox" onclick="hk_check_invoice();" value="200"  id='+obj[i].id +' name="check2" /> '+obj[i].hk_servicename + '</td>'+ '<td>'+ obj[i].hk_serviceprice + '</td>' + '</tr>').appendTo($grouplist);
         
-	   // alert("checked: " + checked);
+	  //  alert("checked: " + checked);
 	  //  alert("not checked: " + notChecked);
 }
 
@@ -310,7 +310,7 @@ function get_availabe_time(h_val)
 	             var obj = response;
 	            // alert(obj);
 	             for (var i = 0; i < obj.length; i++) {
-	                    alert(obj[i].hk_available);
+	                   // alert(obj[i].hk_available);
 	                    var c = '';
 	                    if(obj[i].hk_available === 0)
 	                    	{
