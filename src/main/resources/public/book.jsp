@@ -47,6 +47,7 @@ $(document).ready(function() {
 // $('#book_div').show();
 // $('#book_div3').show();
   // $('#book_div0').show();
+  //
    $('#datepicker').val('Select Your Date');
    hk_localities_get();
   });
