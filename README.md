@@ -27,3 +27,10 @@ POST	BOOK time	http://localhost:8181/api/v1/updatetimepool?hk_date=25-10-2016&hk
 		
 POST	unbook	http://localhost:8181/api/v1/resettimepool?hk_pid=6
 
+GET     Populate 2nd form using user id from session, have to login first to test it,same id must have
+entery in address table
+http://localhost:8181/api/v1/user/addressshow?hk_user_id=0
+
+
+
+

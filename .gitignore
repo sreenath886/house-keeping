@@ -1,2 +1,4 @@
 /target/
-/pom.properties
+.pom.properties
+.DBUtil.java
+.application.properties

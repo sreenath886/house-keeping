@@ -1,5 +1,7 @@
 package com.houseservice.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
@@ -53,8 +55,48 @@ public String AddAddessLog(long hk_user_id, long hk_locality, String hk_address,
     //return "User address added !";
   }
 
-
 //Add user address
+
+
+
+
+//Show user address
+@RequestMapping(value="user/addressshow",method = RequestMethod.GET)
+public String list(long hk_user_id,HttpSession session){
+	JSONObject json = new JSONObject();
+    String st2 =null ;
+    String userid = (String) session.getAttribute("Userid");
+    hk_user_id =  Long.parseLong(userid,10);
+    
+    try{
+	for (String str: usersAddressRepository.querybyhk_user_id(hk_user_id)) {           
+        //Do your stuff here
+		String[] parts = str.split(",");
+		json.put("id", parts[0]);
+		json.put("hk_locality", parts[1]);
+		json.put("hk_address", parts[2]);
+		json.put("hk_housetype", parts[3]);
+        String st1 = (json).toString();
+        st2 = st2+","+st1;
+    }
+	st2 = st2.substring(5);
+	return (st2).toString();
+
+
+}
+catch (Exception ex) {
+  	JSONObject json2 = new JSONObject();
+  	json.put("response", "1"); //1 is error
+    return (json).toString();
+  //return "Error adding address: " + ex.toString();
+}
+}
+  //vj
+  //return "User address added !";
+
+
+
+
 
 
 

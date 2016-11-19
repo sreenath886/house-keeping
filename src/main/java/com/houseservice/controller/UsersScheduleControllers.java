@@ -86,8 +86,8 @@ public class UsersScheduleControllers {
 		try {
 			//System.out.println("reached vj2.5");
              conn = DBUtil.getConnection(DBType.MYSQLDB);
-			 String sql = "Update employeeTimePool as etp inner join (select min(id) as id FROM cleanu.employeeTimePool "
-			 		+ "WHERE hk_date =? AND hk_starttime=? AND hk_zone like ? AND hk_callid = '0') as A on etp.id = A.id "
+			 String sql = "Update employeeTimePool as etp inner join (select min(hk_pid) as id FROM cleanu.employeeTimePool "
+			 		+ "WHERE hk_date =? AND hk_starttime=? AND hk_zone like ? AND hk_callid = '0') as A on etp.hk_pid = A.id "
 			 		+ "set etp.hk_callid = ?,etp.flag=? ";
 			 pstmt = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			 pstmt.setString(1, hk_date);
