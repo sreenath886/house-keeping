@@ -26,7 +26,7 @@ private UserInvoiceRepository userInvoiceRepository ;
 //Add user address
 @RequestMapping(value="user/invoiceinsert",method = RequestMethod.POST)
 @ResponseBody
-public String AddLog(long hk_logId, long hk_userId, String hk_invoiceDate, int hk_invoiceTime,int hk_addOnServices,
+public String AddLog(long hk_logId, long hk_userId, String hk_invoiceDate, String hk_invoiceTime,int hk_addOnServices,
 		int hk_addonAmount,int hk_mainService,int hk_mainAmount,String hk_couponcode,int hk_discount,int hk_tax,int hk_total,
 		String hk_paymentType,HttpSession session)
 {

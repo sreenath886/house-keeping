@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 @Entity
-@Table(name = "userinvoice2")
+@Table(name = "userinvoice")
 public class Userinvoice {
 
   // ------------------------
@@ -28,7 +28,7 @@ public class Userinvoice {
   private String hk_invoiceDate;
   
   @NotNull  
-  private long hk_invoiceTime;
+  private String hk_invoiceTime;
   
   private long hk_addOnServices;
   
@@ -97,11 +97,11 @@ public void setHk_invoiceDate(String hk_invoiceDate) {
 	this.hk_invoiceDate = hk_invoiceDate;
 }
 
-public long getHk_invoiceTime() {
+public String getHk_invoiceTime() {
 	return hk_invoiceTime;
 }
 
-public void setHk_invoiceTime(long hk_invoiceTime) {
+public void setHk_invoiceTime(String hk_invoiceTime) {
 	this.hk_invoiceTime = hk_invoiceTime;
 }
 
@@ -169,7 +169,7 @@ public void setHk_paymentType(String hk_paymentType) {
 	this.hk_paymentType = hk_paymentType;
 }
 
-public Userinvoice(long hk_logId, long hk_userId, String hk_invoiceDate, long hk_invoiceTime,
+public Userinvoice(long hk_logId, long hk_userId, String hk_invoiceDate, String hk_invoiceTime,
 		long hk_addOnServices, long hk_addonAmount, long hk_mainService,long hk_mainAmount, 
 		String hk_couponcode, long hk_discount, long hk_tax,
 		long hk_total, String hk_paymentType) {

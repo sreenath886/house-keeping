@@ -31,6 +31,9 @@ GET     Populate 2nd form using user id from session, have to login first to tes
 entery in address table
 http://localhost:8181/api/v1/user/addressshow?hk_user_id=0
 
+-- WORKS AFTER LOGIN AND LOG INSERT
+POST   http://localhost:8181/api/v1/user/invoiceinsert?hk_logId=0&hk_userId=0&hk_invoiceDate=06-04-2010&hk_invoiceTime=12&hk_addOnServices=2&hk_addonAmount=200&hk_mainService=1&hk_mainAmount=300&hk_couponcode=22dhdbndjm@&hk_discount=20&hk_tax=16&hk_total=30000&hk_paymentType=hand
+
 
 
 
