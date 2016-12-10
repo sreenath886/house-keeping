@@ -227,22 +227,22 @@ DROP TABLE IF EXISTS `userinvoice`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `userinvoice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `hk_logId` bigint(20) DEFAULT NULL,
-  `hk_userId` int(11) DEFAULT NULL,
+  `hk_logId` bigint(20) NOT NULL,
+  `hk_userId` int(11) NOT NULL,
   `hk_invoiceDate` varchar(10) DEFAULT NULL,
-  `hk_invoiceTime` int(11) DEFAULT NULL,
+  `hk_invoiceTime` varchar(10) DEFAULT NULL,
   `hk_addOnServices` int(11) DEFAULT NULL,
-  `hk_addonAmount` varchar(45) DEFAULT NULL,
-  `hk_mainService` varchar(45) DEFAULT NULL,
+  `hk_addonAmount` int(11) DEFAULT NULL,
+  `hk_mainService` int(11) DEFAULT NULL,
   `hk_mainAmount` int(11) DEFAULT NULL,
   `hk_couponcode` varchar(45) DEFAULT NULL,
   `hk_discount` int(11) DEFAULT NULL,
+  `hk_tax` int(11) DEFAULT NULL,
   `hk_total` int(11) DEFAULT NULL,
   `hk_paymentType` varchar(45) DEFAULT NULL,
   `hk_lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinvoice`
